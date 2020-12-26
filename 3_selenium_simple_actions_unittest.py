@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+from selenium.webdriver.support.ui import Select
 import unittest
 import time
 
@@ -61,14 +62,43 @@ class AssertionTest(unittest.TestCase):
     #     action = ActionChains(self.driver)
     #     action.double_click(double_click_button).perform()
 
-    def test_perform_drag_and_drop(self):
-        draggable = self.driver.find_element_by_id('draggable')
-        target = self.driver.find_element_by_id('droppable')
-        self.assertEqual("Drop here", target.text)
-        time.sleep(3)
-        action = ActionChains(self.driver)
-        action.drag_and_drop(draggable, target).perform()
-        assert "Dropped!" in target.text
+    # def test_perform_drag_and_drop(self):
+    #     draggable = self.driver.find_element_by_id('draggable')
+    #     target = self.driver.find_element_by_id('droppable')
+    #     self.assertEqual("Drop here", target.text)
+    #     time.sleep(3)
+    #     action = ActionChains(self.driver)
+    #     action.drag_and_drop(draggable, target).perform()
+    #     assert "Dropped!" in target.text
+    #
+    # def test_drop_down_menu(self):
+    #     element1 = self.driver.find_element_by_id("speed")
+    #     ddm = Select(element1)
+    #     ddm.select_by_visible_text("Fast")
+    #     element2 = self.driver.find_element_by_id("files")
+    #     ddm = Select(element2)
+    #     ddm.select_by_visible_text("PDF file")
+    #     element3 = self.driver.find_element_by_id("number")
+    #     ddm = Select(element3)
+    #     ddm.select_by_visible_text("5")
+    #     element4 = self.driver.find_element_by_id("products")
+    #     ddm = Select(element4)
+    #     ddm.select_by_visible_text("Google")
+    #     element5 = self.driver.find_element_by_id("animals")
+    #     ddm = Select(element5)
+    #     ddm.select_by_visible_text("Avatar")
+    #     time.sleep(5)
+
+    def test_checkboxes_and_registration_form(self):
+        first_name = self.driver.find_element_by_id("RESULT_TextField-1")
+        last_name = self.driver.find_element_by_id("RESULT_TextField-2")
+        phone = self.driver.find_element_by_id("RESULT_TextField-3")
+        country = self.driver.find_element_by_id("RESULT_TextField-4")
+        city = self.driver.find_element_by_id("RESULT_TextField-5")
+        email = self.driver.find_element_by_id("RESULT_TextField-6")
+        #
+        #radio button
+        radio = self.driver.find_element_by_xpath("//*[@id="q26"]/table/tbody/tr[1]/td and @value='SRF']")
 
 
 
@@ -93,8 +123,8 @@ class AssertionTest(unittest.TestCase):
     #     self.assertTrue(account_link_button.is_displayed())
     #     self.assertTrue(account_link_button.is_enabled())
 
-    def tearDown(self):
-        self.driver.close()
+    # def tearDown(self):
+    #    self.driver.close()
 
 
 if __name__ == "__main__":
