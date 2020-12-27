@@ -10,7 +10,7 @@ class AssertionTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe")
-        self.driver.implicitly_wait(30)
+        # self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get(self.URL)
 
@@ -88,27 +88,24 @@ class AssertionTest(unittest.TestCase):
     #     ddm = Select(element5)
     #     ddm.select_by_visible_text("Avatar")
     #     time.sleep(5)
+    #
+    # def test_checkboxes_and_radio_button(self):
+    #
+    #     # radio button
+    #     self.driver.find_element_by_id('RESULT_RadioButton-7_0').click()
+    #     self.assertTrue(self.driver.find_element_by_id('RESULT_RadioButton-7_0').is_selected())
+    #     # check boxes
+    #     day1 = self.driver.find_element_by_id('RESULT_CheckBox-8_0').click
+    #     self.assertTrue(self.driver.find_element_by_id('RESULT_CheckBox-8_0').is_selected())
+    #     or
+    #     ActionChains(self.driver).move_to_element(day1).click(day1).perform()
+    #
+    #     time.sleep(5)
+    #
+    #     button = driver.find_element_by_xpath('//*[@id="RESULT_RadioButton-7_0"]')
+    #     driver.execute_script("arguments[0].click();", button)
 
-    def test_checkboxes_and_registration_form(self):
-        first_name = self.driver.find_element_by_id("RESULT_TextField-1")
-        last_name = self.driver.find_element_by_id("RESULT_TextField-2")
-        phone = self.driver.find_element_by_id("RESULT_TextField-3")
-        country = self.driver.find_element_by_id("RESULT_TextField-4")
-        city = self.driver.find_element_by_id("RESULT_TextField-5")
-        email = self.driver.find_element_by_id("RESULT_TextField-6")
-        #
-        #radio button
-        radio = self.driver.find_element_by_xpath("//*[@id="q26"]/table/tbody/tr[1]/td and @value='SRF']")
-
-
-
-
-
-
-
-
-
-    # def test_search(self):
+        # def test_search(self):
     #     search_field = self.driver.find_element_by_name("q")
     #     search_field.clear()
     #     # check maxlength attribute is set to 2048
@@ -123,8 +120,8 @@ class AssertionTest(unittest.TestCase):
     #     self.assertTrue(account_link_button.is_displayed())
     #     self.assertTrue(account_link_button.is_enabled())
 
-    # def tearDown(self):
-    #    self.driver.close()
+    def tearDown(self):
+       self.driver.close()
 
 
 if __name__ == "__main__":
