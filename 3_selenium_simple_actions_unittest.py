@@ -1,6 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import Select
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
 import unittest
 import time
 
@@ -10,30 +15,32 @@ class AssertionTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe")
-        # self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get(self.URL)
-
+    #
     # def test_assert_title_and_url(self):
     #     assert self.driver.title == "Automation Testing Practice"
     #     assert self.driver.current_url == "https://testautomationpractice.blogspot.com/"
 
-    # def test_wiki_search_field(self):
-    #     # not always work
-    #     #
-    #     wiki_field = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-input")
-    #     # self.assertTrue(wiki_field.is_displayed())
-    #     # self.assertTrue(wiki_field.is_enabled())
-    #     wiki_field.send_keys("something")
-    #     wiki_button = self.driver.find_element_by_xpath(
-    #         '//*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]')
-    #     wiki_button.submit()
-    #     time.sleep(5)
-    #     wiki_result_header = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results-header")
-    #     self.assertTrue(wiki_result_header.is_displayed())
-    #     wiki_result = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results")
-    #     assert "Search results" in wiki_result.text
-
+    def test_wiki_search_field(self):
+        # not always work
+        #
+        wiki_field = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-input")
+        # self.assertTrue(wiki_field.is_displayed())
+        # self.assertTrue(wiki_field.is_enabled())
+        # wiki_field.send_keys("something")
+        wiki_field.submit()
+        time.sleep(3)
+        # wiki_button = self.driver.find_element_by_xpath(
+        #     '//*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]')
+        # wiki_button.submit()
+        # time.sleep(5)
+        # wiki_result_header = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results-header")
+        # self.assertTrue(wiki_result_header.is_displayed())
+        # wiki_result = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results")
+        # assert "Search results" in wiki_result.text
+    ##
     # def test_alert_accept(self):
     #     alert_button = self.driver.find_element_by_xpath('//*[@id="HTML9"]/div[1]/button')
     #     alert_button.click()
@@ -42,7 +49,7 @@ class AssertionTest(unittest.TestCase):
     #     alert.accept()
     #     alert_text = self.driver.find_element_by_id("demo")
     #     self.assertEqual("You pressed OK!", alert_text.text)
-    #
+    ##
     # def test_alert_dismiss(self):
     #     alert_button = self.driver.find_element_by_xpath('//*[@id="HTML9"]/div[1]/button')
     #     alert_button.click()
@@ -51,7 +58,7 @@ class AssertionTest(unittest.TestCase):
     #     alert.dismiss()
     #     alert_text = self.driver.find_element_by_id("demo")
     #     self.assertEqual("You pressed Cancel!", alert_text.text)
-    #
+    ##
     # def test_double_click(self):
     #     field1 = self.driver.find_element_by_xpath('//*[@id="field1"]')
     #     field2 = self.driver.find_element_by_xpath('//*[@id="field2"]')
@@ -104,21 +111,30 @@ class AssertionTest(unittest.TestCase):
     #
     #     button = driver.find_element_by_xpath('//*[@id="RESULT_RadioButton-7_0"]')
     #     driver.execute_script("arguments[0].click();", button)
-
-        # def test_search(self):
-    #     search_field = self.driver.find_element_by_name("q")
-    #     search_field.clear()
-    #     # check maxlength attribute is set to 2048
-    #     self.assertEqual("2048", search_field.get_attribute("maxlength"))
-    #     search_field.send_keys("phones")
-    #     search_field.submit()
-    #     time.sleep(1)
-    #     assert "phones" in self.driver.title
     #
-    # def test_account_displayed(self):
-    #     account_link_button = self.driver.find_element_by_link_text("Войти")
-    #     self.assertTrue(account_link_button.is_displayed())
-    #     self.assertTrue(account_link_button.is_enabled())
+    #     def test_search(self):
+    #         search_field = self.driver.find_element_by_name("q")
+    #         search_field.clear()
+    #     # check maxlength attribute is set to 2048
+    #         self.assertEqual("2048", search_field.get_attribute("maxlength"))
+    #         search_field.send_keys("phones")
+    #         search_field.submit()
+    #         time.sleep(1)
+    #         assert "phones" in self.driver.title
+    ##
+    # def test_link_displayed(self):
+    #     submit_link_button = self.driver.find_element_by_link_text("Tooltips")
+    #     self.assertTrue(submit_link_button.is_displayed())
+    ##
+    # def test_tool_tip(self):
+    #     # driver = self.driver
+    #     # frame_elm = driver.find_element_by_class_name("demo-frame")
+    #     # driver.switch_to.frame(frame_elm)
+    #     age_field = self.driver.find_element_by_id("age")
+    #     ActionChains(self.driver).move_to_element(age_field).perform()
+    #     tool_tip_elm = WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "ui-tooltip-content")))
+    #     # verify tooltip message
+    #     self.assertEqual("We ask for your age only for statistical purposes.", tool_tip_elm.text)
 
     def tearDown(self):
        self.driver.close()
