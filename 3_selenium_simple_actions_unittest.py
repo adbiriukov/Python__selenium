@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import Select
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import expected_conditions as EC
 
 import unittest
 import time
@@ -18,28 +18,33 @@ class AssertionTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get(self.URL)
-    #
+    ##
     # def test_assert_title_and_url(self):
     #     assert self.driver.title == "Automation Testing Practice"
     #     assert self.driver.current_url == "https://testautomationpractice.blogspot.com/"
-
-    def test_wiki_search_field(self):
-        # not always work
+    ##
+    # def test_wiki_search_field(self):
+    #     #
+    #     wiki_field = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-input")
+    #     # self.assertTrue(wiki_field.is_displayed())
+    #     self.assertTrue(wiki_field.is_enabled())
+    #     wiki_field.send_keys("something")
+    #     self.driver.find_element_by_xpath('//*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]/input').click()
+    #     time.sleep(3)
+    #
+    #     wiki_result_header = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results-header")
+    #     self.assertTrue(wiki_result_header.is_displayed())
         #
-        wiki_field = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-input")
-        # self.assertTrue(wiki_field.is_displayed())
-        # self.assertTrue(wiki_field.is_enabled())
-        # wiki_field.send_keys("something")
-        wiki_field.submit()
-        time.sleep(3)
-        # wiki_button = self.driver.find_element_by_xpath(
-        #     '//*[@id="Wikipedia1_wikipedia-search-form"]/div/span[2]/span[2]')
-        # wiki_button.submit()
-        # time.sleep(5)
-        # wiki_result_header = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results-header")
-        # self.assertTrue(wiki_result_header.is_displayed())
+        # Don't work
+        #
         # wiki_result = self.driver.find_element_by_id("Wikipedia1_wikipedia-search-results")
-        # assert "Search results" in wiki_result.text
+        # wiki_result = self.driver.find_element_by_link_text('something')
+        #
+        # located element with contains()
+        # time.sleep(30)
+        # wiki_result = self.driver.find_element_by_partial_link_text('something')
+        # assert "something" in wiki_result.text
+
     ##
     # def test_alert_accept(self):
     #     alert_button = self.driver.find_element_by_xpath('//*[@id="HTML9"]/div[1]/button')
@@ -68,7 +73,7 @@ class AssertionTest(unittest.TestCase):
     #     double_click_button = self.driver.find_element_by_xpath('//*[@id="HTML10"]/div[1]/button')
     #     action = ActionChains(self.driver)
     #     action.double_click(double_click_button).perform()
-
+    ##
     # def test_perform_drag_and_drop(self):
     #     draggable = self.driver.find_element_by_id('draggable')
     #     target = self.driver.find_element_by_id('droppable')
@@ -77,7 +82,7 @@ class AssertionTest(unittest.TestCase):
     #     action = ActionChains(self.driver)
     #     action.drag_and_drop(draggable, target).perform()
     #     assert "Dropped!" in target.text
-    #
+    ##
     # def test_drop_down_menu(self):
     #     element1 = self.driver.find_element_by_id("speed")
     #     ddm = Select(element1)
@@ -94,33 +99,24 @@ class AssertionTest(unittest.TestCase):
     #     element5 = self.driver.find_element_by_id("animals")
     #     ddm = Select(element5)
     #     ddm.select_by_visible_text("Avatar")
-    #     time.sleep(5)
-    #
-    # def test_checkboxes_and_radio_button(self):
-    #
+    #     time.sleep(20)
+    ##
+    # def test_radio_button(self):
     #     # radio button
-    #     self.driver.find_element_by_id('RESULT_RadioButton-7_0').click()
-    #     self.assertTrue(self.driver.find_element_by_id('RESULT_RadioButton-7_0').is_selected())
-    #     # check boxes
-    #     day1 = self.driver.find_element_by_id('RESULT_CheckBox-8_0').click
-    #     self.assertTrue(self.driver.find_element_by_id('RESULT_CheckBox-8_0').is_selected())
-    #     or
-    #     ActionChains(self.driver).move_to_element(day1).click(day1).perform()
+    #     self.driver.switch_to.frame('frame-one1434677811')
     #
+    #     action = ActionChains(self.driver)
+    #     radio = self.driver.find_element_by_id('RESULT_RadioButton-7_0')
+    #     action.click(radio)
+    #     action.perform()
+    #     # radio.is_displayed()
+    #     # radio.click()
+    #     self.assertTrue(radio.is_selected())
     #     time.sleep(5)
-    #
-    #     button = driver.find_element_by_xpath('//*[@id="RESULT_RadioButton-7_0"]')
-    #     driver.execute_script("arguments[0].click();", button)
-    #
-    #     def test_search(self):
-    #         search_field = self.driver.find_element_by_name("q")
-    #         search_field.clear()
-    #     # check maxlength attribute is set to 2048
-    #         self.assertEqual("2048", search_field.get_attribute("maxlength"))
-    #         search_field.send_keys("phones")
-    #         search_field.submit()
-    #         time.sleep(1)
-    #         assert "phones" in self.driver.title
+
+
+
+
     ##
     # def test_link_displayed(self):
     #     submit_link_button = self.driver.find_element_by_link_text("Tooltips")
