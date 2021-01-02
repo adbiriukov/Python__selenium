@@ -1,41 +1,55 @@
 from selenium import webdriver
 import time
 import unittest
+unittest.TestLoader.sortTestMethodsUsing = None
 from selenium.webdriver import ActionChains
+
+from selenium.webdriver.support.ui import Select
 
 
 class AssertionTest(unittest.TestCase):
     URL = "https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407"
 
-    def setUp(self):
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe")
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-        self.driver.get(self.URL)
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = webdriver.Chrome(executable_path="chromedriver.exe")
+        cls.driver.implicitly_wait(30)
+        cls.driver.maximize_window()
+        cls.driver.get(cls.URL)
 
-    # def test_fill_text_boxes(self):
-    #     first_name = self.driver.find_element_by_id('RESULT_TextField-1')
-    #     first_name.send_keys('Andrey')
-    #     time.sleep(5)
-    #     self.assertTrue(first_name.get_attribute('value') == 'Andrey')
-    #     print('------')
+    def test_1_fill_text_boxes(self):
+        first_name = self.driver.find_element_by_id('RESULT_TextField-1')
+        first_name.send_keys('Andrey')
+        self.assertTrue(first_name.get_attribute('value') == 'Andrey')
 
-    # def test_radio_button(self):
-    #     action = ActionChains(self.driver)
-    #     radio = self.driver.find_element_by_id('RESULT_RadioButton-7_0')
-    #     action.click(radio).perform()
-    #     radio.is_selected()
-    #     time.sleep(5)
+    def test_2_radio_button(self):
+        action = ActionChains(self.driver)
+        radio = self.driver.find_element_by_id('RESULT_RadioButton-7_0')
+        action.click(radio).perform()
+        radio.is_selected()
 
-    def test_check_boxes(self):
+    def test_3_check_boxes(self):
         action = ActionChains(self.driver)
         cbox = self.driver.find_element_by_id('RESULT_CheckBox-8_0')
         action.click(cbox).perform()
         cbox.is_selected()
-        time.sleep(5)
 
-    def tearDown(self):
-       self.driver.close()
+    def test_4_drop_down_menu(self):
+        dd_menu = self.driver.find_element_by_id('RESULT_RadioButton-9')
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('Morning')
+        self.assertTrue(dd_menu.get_attribute("value") == 'Radio-0')
+
+    def test_5_click_submit_get_error(self):
+        self.driver.find_element_by_id('FSsubmit').click()
+        result = self.driver.find_element_by_class_name('segment_header')
+        self.assertTrue(result.text == 'An error has occurred')
+        print(result.text)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver = webdriver.Chrome(executable_path="chromedriver.exe")
+        cls.driver.close()
 
 
 if __name__ == "__main__":
@@ -43,8 +57,8 @@ if __name__ == "__main__":
 
 
 
-
-
+# Old test's
+#
 # check boxes
 # def test_checkboxes(self):
 #     self.driver.switch_to.frame('frame-one1434677811')
@@ -91,11 +105,3 @@ if __name__ == "__main__":
 # from selenium.webdriver.common.by import By
 # from selenium.webdriver.support import expected_conditions as EC
 # WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='vehicle1']"))).click()
-
-
-
-
-
-
-
-
