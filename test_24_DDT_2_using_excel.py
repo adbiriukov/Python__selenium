@@ -1,7 +1,9 @@
 # test login with multiple account, and we store data in xlsc file. If pass it give PASS message,
 # if failed give FAILED message
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 import test_24_DDT_1_using_Excel
+import time
 
 driver = webdriver.Chrome(executable_path="C:/Users/User/PycharmProjects/last_try/pytest_start_2/chromedriver.exe")
 driver.get("https://opensource-demo.orangehrmlive.com/")
@@ -21,7 +23,12 @@ for r in range(2, row+1):
     if driver.current_url == "https://opensource-demo.orangehrmlive.com/index.php/dashboard":
         print("test is passed")
         test_24_DDT_1_using_Excel.writeData(path, "Sheet1", r, 3, "test passed")   # we pass data to the excel
-        driver.find_element_by_link_text("Logout").click()  # To Log out
+
+        admin = driver.find_element_by_id('welcome')
+        action = ActionChains(driver)
+        action.move_to_element(admin).click().perform()
+        time.sleep(10)
+        driver.find_element_by_xpath('//*[@id="welcome-menu"]/ul/li[2]/a').click()
     else:
         print('Test failed')
         test_24_DDT_1_using_Excel.writeData(path, "Sheet1", r, 3, "Test failed")
