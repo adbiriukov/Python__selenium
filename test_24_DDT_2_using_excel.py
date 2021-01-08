@@ -14,8 +14,8 @@ path = "C://Users/User/PycharmProjects/LastTry_1220/selenium_logs/xlsx_files/111
 # Sheet1 is name if the sheet (page in excel)
 row = test_24_DDT_1_using_Excel.getRowCount(path, "Sheet1")
 for r in range(2, row+1):
-    username = test_24_DDT_1_using_Excel.readData(path, "Sheet1", r, 1) # 1 is column number where username
-    password = test_24_DDT_1_using_Excel.readData(path, "Sheet1", r, 2) # 2 is column number where we store password
+    username = test_24_DDT_1_using_Excel.readData(path, "Sheet1", r, 1)  # 1 is column number where username
+    password = test_24_DDT_1_using_Excel.readData(path, "Sheet1", r, 2)  # 2 is column number where we store password
 
     driver.find_element_by_name("txtUsername").send_keys(username)
     driver.find_element_by_name("txtPassword").send_keys(password)
@@ -32,3 +32,5 @@ for r in range(2, row+1):
     else:
         print('Test failed')
         test_24_DDT_1_using_Excel.writeData(path, "Sheet1", r, 3, "Test failed")
+
+driver.close()
