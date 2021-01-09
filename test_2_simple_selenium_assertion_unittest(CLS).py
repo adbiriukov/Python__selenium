@@ -6,6 +6,9 @@ import unittest
 class AssertionTest(unittest.TestCase):
     URL = "https://www.google.com/"
 
+    # Difference between setUp, tearDown method and class its:
+    # method execute multiple time before and after each test,
+    # class execute only once before and after
     @classmethod
     def setUp(cls):
         cls.driver = webdriver.Chrome(executable_path="chromedriver.exe")
