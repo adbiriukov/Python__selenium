@@ -4,12 +4,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 import unittest
+
+
 class ToolTipTest (unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path="../chromedriver.exe")
         self.driver.get("http://jqueryui.com/tooltip/")
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
+
     def test_tool_tip(self):
         driver = self.driver
         frame_elm = driver.find_element_by_class_name("demo-frame")
@@ -20,9 +23,10 @@ class ToolTipTest (unittest.TestCase):
             .until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "ui-tooltip-content")))
         # verify tooltip message
         self.assertEqual("We ask for your age only for statistical purposes.", tool_tip_elm.text)
+
     def tearDown(self):
         self.driver.close()
 
 
 if __name__ == "__main__":
- unittest.main(verbosity=2)
+    unittest.main(verbosity=2)
