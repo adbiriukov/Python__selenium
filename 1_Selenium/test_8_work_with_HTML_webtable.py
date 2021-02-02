@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 
-driver = webdriver.Chrome(executable_path="C:/Users/User/PycharmProjects/last_try/pytest_start_2/chromedriver.exe")
+driver = webdriver.Chrome(executable_path="../chromedriver.exe")
 driver.get("https://www.w3schools.com/html/html_tables.asp")
 
 # to get all rows just delete [1] from /tbody/tr[1], same for columns
