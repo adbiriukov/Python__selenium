@@ -32,27 +32,27 @@ def search_for_right_price(request, sheet_number):
     search2.send_keys(request)
     search2.submit()
 
-    # # choose stores
-    time.sleep(1)
-    all_stores = driver.find_element_by_xpath('//*[@id="view"]/div[1]/div/header/span[1]/span')
-    all_stores.click()
-    time.sleep(1)
-    verny = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[3]/div[2]')
-    verny.click()
-    five_ka = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[10]/div[2]')
-    five_ka.click()
-    kirov_sky = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[25]/div[2]/div[1]')
-    kirov_sky.click()
-    magnit = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[29]/div[2]/div[1]')
-    magnit.click()
-    monetka = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[36]/div[2]/div[1]')
-    monetka.click()
-    show = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[3]/div/div/span')
-    show.click()
-
-    # # sort results by price
-    driver.find_element_by_xpath('//*[@id="view"]/div[1]/div/header/span[2]').click()
-    driver.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div[2]').click()
+    # # # choose stores
+    # time.sleep(1)
+    # all_stores = driver.find_element_by_xpath('//*[@id="view"]/div[1]/div/header/span[1]/span')
+    # all_stores.click()
+    # time.sleep(1)
+    # verny = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[3]/div[2]')
+    # verny.click()
+    # five_ka = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[10]/div[2]')
+    # five_ka.click()
+    # kirov_sky = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[25]/div[2]/div[1]')
+    # kirov_sky.click()
+    # magnit = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[29]/div[2]/div[1]')
+    # magnit.click()
+    # monetka = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div[2]/div[36]/div[2]/div[1]')
+    # monetka.click()
+    # show = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[3]/div/div/span')
+    # show.click()
+    #
+    # # # sort results by price
+    # driver.find_element_by_xpath('//*[@id="view"]/div[1]/div/header/span[2]').click()
+    # driver.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div[2]').click()
 
     # create list to store data
     rows = []
