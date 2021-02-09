@@ -22,9 +22,9 @@
 #     print('error')
 #
 #
-# requests = ('Куриная грудка', 'крабовые палочки', 'горбуша', 'тунец', 'морковь', 'греча', 'рис', 'кефир', 'творог')
-# count = 1
-# for request in requests:
-#     driver.execute_script("window.open('https://edadeal.ru/ekaterinburg/offers?q="+str(request)+"&retailer=5ka&retailer=kirmarket&retailer=magnit-univer&retailer=perekrestok&retailer=verno&sort=aprice', 'new_window +"+str(count)+"')")
-#     count += 1
-#     time.sleep(5)
+requests = ('Куриная грудка', 'крабовые палочки', 'горбуша', 'тунец', 'морковь', 'греча', 'рис', 'кефир', 'творог')
+count = 1
+for request in requests:
+    driver.execute_script("window.open('https://edadeal.ru/ekaterinburg/offers?q="+str(request)+"&retailer=5ka&retailer=kirmarket&retailer=magnit-univer&retailer=perekrestok&retailer=verno&sort=aprice', 'new_window +"+str(count)+"')")
+    count += 1
+    time.sleep(5)
