@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/test_31_unittest/test_26_unittest_test_suite" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/6_DDT" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/1_Selenium/Page_Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/7_practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/7_practice/1_test_login_form" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (LastTry_1220)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
