@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from web_elements import RegFormElements
+from web_elements import LoginFormElements
 import time
 
 
@@ -12,34 +12,34 @@ class SearchTests(unittest.TestCase):
         self.driver.get("https://opensource-demo.orangehrmlive.com/index.php/dashboard")
 
     # Positive test
-    # Test with correct login
     def test_correct_login(self):
-        self.driver.find_element(*RegFormElements.name).send_keys('Admin')
-        self.driver.find_element(*RegFormElements.password).send_keys('admin123')
-        self.driver.find_element(*RegFormElements.button).click()
+        # Test with correct login
+        self.driver.find_element(*LoginFormElements.name).send_keys(LoginFormElements.correct_login)
+        self.driver.find_element(*LoginFormElements.password).send_keys(LoginFormElements.correct_password)
+        self.driver.find_element(*LoginFormElements.button).click()
         assert self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/h1').is_displayed()
 
     # Negative tests
-    # login with empty login and password fields
     def test_empty_login_and_password(self):
-        self.driver.find_element(*RegFormElements.button).click()
-        error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == RegFormElements.empty_username
+        # login with empty login and password fields
+        self.driver.find_element(*LoginFormElements.button).click()
+        error_message = self.driver.find_element(*LoginFormElements.message)
+        assert error_message.text == LoginFormElements.empty_username
 
-    # login with password field
     def test_empty_password_field(self):
-        self.driver.find_element(*RegFormElements.name).send_keys('Admin')
-        self.driver.find_element(*RegFormElements.button).click()
-        error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == RegFormElements.empty_password
+        # login with password field
+        self.driver.find_element(*LoginFormElements.name).send_keys(LoginFormElements.correct_login)
+        self.driver.find_element(*LoginFormElements.button).click()
+        error_message = self.driver.find_element(*LoginFormElements.message)
+        assert error_message.text == LoginFormElements.empty_password
 
-    # login with incorrect password
     def test_incorrect_password(self):
-        self.driver.find_element(*RegFormElements.name).send_keys('Admin')
-        self.driver.find_element(*RegFormElements.password).send_keys('Admin')
-        self.driver.find_element(*RegFormElements.button).click()
-        error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == RegFormElements.invalid_credentials
+        # login with incorrect password
+        self.driver.find_element(*LoginFormElements.name).send_keys(LoginFormElements.correct_login)
+        self.driver.find_element(*LoginFormElements.password).send_keys(LoginFormElements.incorrect_password)
+        self.driver.find_element(*LoginFormElements.button).click()
+        error_message = self.driver.find_element(*LoginFormElements.message)
+        assert error_message.text == LoginFormElements.invalid_credentials
         time.sleep(3)
 
     def tearDown(self):

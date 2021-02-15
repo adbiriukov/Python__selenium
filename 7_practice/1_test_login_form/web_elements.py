@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class RegFormElements(object):
+class LoginFormElements(object):
     # Registration form fields
     name = (By.NAME, 'txtUsername')
     password = (By.NAME, 'txtPassword')
@@ -12,3 +12,9 @@ class RegFormElements(object):
     empty_username = 'Username cannot be empty'
     empty_password = 'Password cannot be empty'
     invalid_credentials = 'Invalid credentials'
+
+    # correct login and password
+    correct_login = 'Admin'
+    correct_password = 'admin123'
+    # incorrect password
+    incorrect_password = 'Admin'
