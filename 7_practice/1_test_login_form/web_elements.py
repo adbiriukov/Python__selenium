@@ -7,3 +7,8 @@ class RegFormElements(object):
     password = (By.NAME, 'txtPassword')
     button = (By.XPATH, '//*[@id="btnLogin"]')
     message = (By.ID, 'spanMessage')
+
+    # error message texts
+    empty_username = 'Username cannot be empty'
+    empty_password = 'Password cannot be empty'
+    invalid_credentials = 'Invalid credentials'
