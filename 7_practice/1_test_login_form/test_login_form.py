@@ -24,14 +24,14 @@ class SearchTests(unittest.TestCase):
     def test_empty_login_and_password(self):
         self.driver.find_element(*RegFormElements.button).click()
         error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == 'Username cannot be empty'
+        assert error_message.text == RegFormElements.empty_username
 
     # login with password field
     def test_empty_password_field(self):
         self.driver.find_element(*RegFormElements.name).send_keys('Admin')
         self.driver.find_element(*RegFormElements.button).click()
         error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == 'Password cannot be empty'
+        assert error_message.text == RegFormElements.empty_password
 
     # login with incorrect password
     def test_incorrect_password(self):
@@ -39,7 +39,7 @@ class SearchTests(unittest.TestCase):
         self.driver.find_element(*RegFormElements.password).send_keys('Admin')
         self.driver.find_element(*RegFormElements.button).click()
         error_message = self.driver.find_element(*RegFormElements.message)
-        assert error_message.text == 'Invalid credentials'
+        assert error_message.text == RegFormElements.invalid_credentials
         time.sleep(3)
 
     def tearDown(self):
