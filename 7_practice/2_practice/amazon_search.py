@@ -6,12 +6,12 @@ from selenium import webdriver
 @ddt
 class SearchDDT(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path="../chromedriver.exe")
+        self.driver = webdriver.Chrome(executable_path="../../chromedriver.exe")
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get('https://www.amazon.com/')
+        # search value and expected count
 
-    # search value and expected count
     @data(('phone', 'results'), ('music', 'results'))
     @unpack
     def test_search(self, search_value, expected_count):
