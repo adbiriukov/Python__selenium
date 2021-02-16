@@ -1,26 +1,31 @@
+import HtmlTestRunner
 import unittest
-import HTMLTestRunner
-import os
-from amazon_homePage import HomePageTest
-from amazon_search import SearchDDT
 
-# get the directory path to output report file
-result_dir = os.getcwd()
 
-# get all tests from SearchProductTest and HomePageTest class
-home_page_tests = unittest.TestLoader().loadTestsFromTestCase(HomePageTest)
-search_tests = unittest.TestLoader().loadTestsFromTestCase(SearchDDT)
+class TestStringMethods(unittest.TestCase):
 
-# create a test suite combining search_test and home_page_test
-smoke_tests = unittest.TestSuite([home_page_tests, search_tests])
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
 
-# open the report file
-outfile = open(result_dir + '\SmokeTestReport.html', 'w')
+    def test_upper_2(self):
+        self.assertEqual('foo'.upper(), 'FOO')
 
-# configure HTMLTestRunner options
-runner = HTMLTestRunner.HTMLTestRunner(stream=outfile,
-                                       title='Test Report',
-                                       description='Smoke Tests')
+    def test_error(self):
+        """ This test should be marked as error one. """
+        raise ValueError
 
-# run the suite using HTMLTestRunner
-runner.run(smoke_tests)
+    def test_error_2(self):
+        """ This test should be marked as error one. """
+        raise ValueError
+
+    def test_fail(self):
+        """ This test should fail. """
+        self.assertEqual(1, 2)
+
+    @unittest.skip("This is a skipped test.")
+    def test_skip(self):
+        """ This test should be skipped. """
+        pass
+
+if __name__ == '__main__':
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='example_dir'))
