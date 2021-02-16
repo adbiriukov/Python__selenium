@@ -27,5 +27,6 @@ class TestStringMethods(unittest.TestCase):
         """ This test should be skipped. """
         pass
 
+
 if __name__ == '__main__':
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='example_dir'))
