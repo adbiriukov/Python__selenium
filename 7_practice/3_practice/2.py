@@ -16,12 +16,5 @@ def test_css_for_home_page(self):
                     .value_of_css_property("background-image"))
 
 
-
-
-
-
-
-
-
 driver.close()
 
