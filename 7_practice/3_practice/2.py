@@ -17,4 +17,3 @@ def test_css_for_home_page(self):
 
 
 driver.close()
-
