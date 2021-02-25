@@ -77,6 +77,14 @@ class HomePageTest(unittest.TestCase):
         self.driver.forward()
         assert 'phone' in self.driver.title
 
+    def test_signup(self):
+        signin_menu = self.driver.find_elements_by_xpath('//*[@id="nav-link-accountList"]')
+        signup_button = self.driver.find_elements_by_xpath('//*[@id="nav-flyout-ya-newCust"]/a')
+        action = ActionChains(self.driver)
+        action.move_to_element(signin_menu).perform()
+        action.move_to_element(signup_button).click()
+        self.driver.close()
+
     @classmethod
     def tearDown(cls):
         # close the browser window
