@@ -2,8 +2,6 @@
 # welcome_text = welcome_text_elm.text
 #
 # assert "Congratulations! You have successfully registered!" == welcome_text
-
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
