@@ -1,8 +1,8 @@
 from selenium import webdriver
 import unittest
-unittest.TestLoader.sortTestMethodsUsing = None
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver import ActionChains
+unittest.TestLoader.sortTestMethodsUsing = None
 
 
 class AssertionTest(unittest.TestCase):
