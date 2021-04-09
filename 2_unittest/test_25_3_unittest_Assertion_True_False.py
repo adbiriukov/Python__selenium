@@ -17,6 +17,5 @@ class Test(unittest.TestCase):
         self.assertFalse(titleOfWebPage == "Google1")  # if False then pass
 
 
-
 if __name__ == '__main__':
     unittest.main
