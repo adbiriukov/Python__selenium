@@ -21,3 +21,4 @@ masterTestSuite = unittest.TestSuite([tc1, tc2, tc3, tc4])
 # unittest.TextTestRunner().run(functionalTestSuite)
 # execute all 9 test cases
 unittest.TextTestRunner().run(masterTestSuite)
+
