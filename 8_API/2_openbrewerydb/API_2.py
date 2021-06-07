@@ -12,4 +12,4 @@ def test_get_locations_for_us_90210_check_one_place_is_returned():
         print(response_body[x]['id'])
 
 
-    # assert response_body["country"] == "United States"
+    assert response_body[0]['country'] == "United States"
