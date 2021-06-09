@@ -19,7 +19,6 @@ class APIClient:
 
 
 # Тестовое API: https://jsonplaceholder.typicode.com
-#
 def pytest_addoption(parser):
     parser.addoption(
         "--url",
