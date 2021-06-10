@@ -56,7 +56,7 @@ def test_api_filtering(api_client, stateId):
     assert response[1]['state'] == state
 #
 #
-# https://api.openbrewerydb.org/breweries?per_page=25
+# --url=https://api.openbrewerydb.org/breweries?per_page=25
 @pytest.mark.parametrize('perPage', ['52', '20'])
 def test_api_filtering(api_client, perPage):
     res = api_client.get(
