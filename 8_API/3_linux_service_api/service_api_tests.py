@@ -78,9 +78,18 @@ def test_api_0_input(api_client, string_request):
 
 
 # special characters, letters and numbers input
-@pytest.mark.parametrize('string_request', ['19b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b1'])
+@pytest.mark.parametrize('string_request', ['19@9#9$9%9f9g9h9j9k9l9;9,9m9n9b9v9c9x9z9q9w9e1'])
 def test_api_0_input(api_client, string_request):
     response = api_client
     request_result = response.get('number')
     assert response.get('number') == 200
+    print(request_result)
+
+# Mora than 1997 characters
+@pytest.mark.xfail
+@pytest.mark.parametrize('string_request', [str(1) * 1998])
+def test_api_0_input(api_client, string_request):
+    response = api_client
+    request_result = response.get('number')
+    assert response.get('number') == offset
     print(request_result)
