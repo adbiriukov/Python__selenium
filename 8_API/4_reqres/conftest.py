@@ -19,16 +19,6 @@ import json
 
 @pytest.fixture()
 def api_client_post_value(api_request, json_request):
-    # json_request = json_request[0]
-    print("=============")
-    print(json_request)
-    # print(type(json_request))
-    # json_request = json.dumps(json_request)
-    json_request = json.dumps(json_request, indent=3)
-    print(json_request)
-    # print("+++++++++")
-    # print(json_request)
-    # print(type(json_request))
     r = requests.post("https://reqres.in/"+str(api_request)+"", json_request)
     response_body = r.json()
     return response_body

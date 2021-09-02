@@ -27,10 +27,12 @@ import pytest
 
 
 @pytest.mark.parametrize('api_request', ['api/users'])
-@pytest.mark.parametrize('json_request', [{"name": "morpheus","job": "leader"}])
+@pytest.mark.parametrize('json_request', [{"name": "morpheus","job": "leader"},
+                                          {"name": "Neo","job": "Chosen one"}])
 def test_api_post(api_client_post_value, api_request, json_request):
     api_response = api_client_post_value
-    # print(api_response)
+    assert api_response["name"] == json_request["name"]
+    assert api_response["job"] == json_request["job"]
 
 
 
