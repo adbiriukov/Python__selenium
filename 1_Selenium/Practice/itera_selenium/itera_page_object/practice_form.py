@@ -10,6 +10,7 @@ driver = webdriver.Chrome(executable_path="../../../../chromedriver.exe")
 driver.implicitly_wait(10)
 driver.get("https://itera-qa.azurewebsites.net/home/automation")
 
+
 # # Fields
 driver.find_element_by_id(Fields.name).send_keys('Name')
 driver.find_element_by_id(Fields.phone).send_keys('12345678')
