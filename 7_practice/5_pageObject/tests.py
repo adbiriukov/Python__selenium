@@ -1,34 +1,37 @@
 from itera_page import IteraPage
-from selenium.webdriver.common.by import By
 
-# def test_itera_enter_text_fields(browser):
-#     itera_automation_page = IteraPage(browser)
-#     itera_automation_page.go_to_site()
-#     # takes 5 arguments: name, phone, email, password, address
-#     itera_automation_page.enter_words('name', 'phone', 'email', 'password', 'address')
+
+def test_itera_enter_text_fields(browser):
+    itera_automation_page = IteraPage(browser)
+    itera_automation_page.go_to_site()
+    # takes 5 arguments: name, phone, email, password, address
+    itera_automation_page.enter_words('name', 'phone', 'email', 'password', 'address')
+
 
 # CheckBox & Radio Button practice
 # Radio: 'female', 'male' Checkboxes: 'monday', 'wednesday', 'friday'
-# def test_itera_checkbox_radioButton(browser):
-#     itera_automation_page = IteraPage(browser)
-#     itera_automation_page.go_to_site()
-#     # choose radio button
-#     radio_female = itera_automation_page.choose_radio_button_by_id('female')
-#     radio_female.is_selected()
-#     # choose checkboxes
-#     checkbox_monday = itera_automation_page.choose_radio_button_by_id('monday')
-#     checkbox_friday = itera_automation_page.choose_radio_button_by_id('friday')
-#     checkbox_monday.is_selected()
-#     checkbox_friday.is_selected()
+def test_itera_checkbox_radio_button(browser):
+    itera_automation_page = IteraPage(browser)
+    itera_automation_page.go_to_site()
+    # choose radio button
+    radio_female = itera_automation_page.choose_radio_button_by_id('female')
+    radio_female.is_selected()
+    # choose checkboxes
+    checkbox_monday = itera_automation_page.choose_radio_button_by_id('monday')
+    checkbox_friday = itera_automation_page.choose_radio_button_by_id('friday')
+    checkbox_monday.is_selected()
+    checkbox_friday.is_selected()
 
-# def test_itera_dropdown(browser):
-#     itera_automation_page = IteraPage(browser)
-#     itera_automation_page.go_to_site()
-#     # Enter visible text for drop down menu
-#     dropdown_result = itera_automation_page.choose_dropdown('Norway')
-#     assert dropdown_result == 'Norway'
 
-def test_itera_checkbox_radioButton_by_ID(browser):
+def test_itera_dropdown(browser):
+    itera_automation_page = IteraPage(browser)
+    itera_automation_page.go_to_site()
+    # Enter visible text for drop down menu
+    dropdown_result = itera_automation_page.choose_dropdown('Norway')
+    assert dropdown_result == 'Norway'
+
+
+def test_itera_checkbox_radio_button_by_id(browser):
     itera_automation_page = IteraPage(browser)
     itera_automation_page.go_to_site()
     # choose radio button
@@ -39,10 +42,3 @@ def test_itera_checkbox_radioButton_by_ID(browser):
     checkbox_serenity = itera_automation_page.choose_radio_button_by_xpath('/html/body/div/div[5]/div[2]/div[2]/div[4]/label')
     checkbox_selenium.is_selected()
     checkbox_serenity.is_selected()
-
-
-
-    #
-    # yandex_main_page.click_on_the_search_button()
-    # elements = yandex_main_page.check_navigation_bar()
-    # assert "Картинки" and "Видео" in elements
