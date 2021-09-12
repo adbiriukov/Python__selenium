@@ -38,7 +38,9 @@ def test_itera_checkbox_radio_button_by_id(browser):
     radio_xpath = itera_automation_page.choose_radio_button_by_xpath('/html/body/div/div[5]/div[2]/div[1]/div[2]/label')
     radio_xpath.is_selected()
     # choose checkboxes
-    checkbox_selenium = itera_automation_page.choose_radio_button_by_xpath('/html/body/div/div[5]/div[2]/div[2]/div[1]/label')
-    checkbox_serenity = itera_automation_page.choose_radio_button_by_xpath('/html/body/div/div[5]/div[2]/div[2]/div[4]/label')
+    checkbox_selenium = itera_automation_page.choose_radio_button_by_xpath\
+        ('/html/body/div/div[5]/div[2]/div[2]/div[1]/label')
+    checkbox_serenity = itera_automation_page.choose_radio_button_by_xpath\
+        ('/html/body/div/div[5]/div[2]/div[2]/div[4]/label')
     checkbox_selenium.is_selected()
     checkbox_serenity.is_selected()
