@@ -38,6 +38,25 @@ class HeroPagesLocators:
     LOCATOR_PAGE_12_DYNAMIC_CONTENT_2 = (By.XPATH, '//*[@id="content"]/div[2]/div[2]')
     LOCATOR_PAGE_12_DYNAMIC_CONTENT_3 = (By.XPATH, '//*[@id="content"]/div[3]/div[2]')
 
+    # Dynamic controls
+    LOCATOR_PAGE_13_CHECKBOX = (By.XPATH, '//*[@id="checkbox"]/input')
+    LOCATOR_PAGE_13_REMOVE_BT = (By.XPATH, '//*[@id="checkbox-example"]/button')
+    LOCATOR_PAGE_13_ENABLE_BT = (By.XPATH, '//*[@id="input-example"]/button')
+    LOCATOR_PAGE_13_TEXT_FIELD = (By.XPATH, '//*[@id="input-example"]/input')
+    LOCATOR_PAGE_13_TEXT_FIELD_MESSAGE = (By.XPATH, '//*[@id="message"]')
+    LOCATOR_PAGE_13_REMOVE_BT_MESSAGE = (By.XPATH, '//*[@id="message"]')
+
+    # Adv entry
+    LOCATOR_PAGE_15_CLOSE_AD = (By.XPATH, '//*[@id="modal"]/div[2]/div[3]/p')
+
+    # Floating menu
+    LOCATOR_PAGE_19_HOME_BT = (By.XPATH, '//*[@id="menu"]/ul/li[1]/a')
+    LOCATOR_PAGE_19_NEWS_BT = (By.XPATH, '//*[@id="menu"]/ul/li[2]/a')
+    LOCATOR_PAGE_19_CONTACT_BT = (By.XPATH, '//*[@id="menu"]/ul/li[3]/a')
+    LOCATOR_PAGE_19_ABOUT_BT = (By.XPATH, '//*[@id="menu"]/ul/li[4]/a')
+
+
+
 
 
 
@@ -128,6 +147,52 @@ class HeroPages(BasePage):
             return True
         else:
             return False
+
+    def dynamic_controls(self):
+        # Find and click checkbox
+        checkbox = self.find_element(HeroPagesLocators.LOCATOR_PAGE_13_CHECKBOX)
+        ActionChains(self.driver).move_to_element(checkbox).click().perform()
+        # Find and click Remove button
+        remove_bt = self.find_element(HeroPagesLocators.LOCATOR_PAGE_13_REMOVE_BT)
+        ActionChains(self.driver).move_to_element(remove_bt).click().perform()
+        # Find and click Enable button
+        enable_bt = self.find_element(HeroPagesLocators.LOCATOR_PAGE_13_ENABLE_BT)
+        enable_bt.click()
+        # wait for field to be enabled and enter value. Explicit wait don't work and test return:
+        # 'element not interactable'
+        time.sleep(3)
+        text_field = self.find_element(HeroPagesLocators.LOCATOR_PAGE_13_TEXT_FIELD)
+        text_field.send_keys('Something')
+        # Checking that both messages is present ant return True if true
+        text_field_message_displayed = self.find_element(
+            HeroPagesLocators.LOCATOR_PAGE_13_TEXT_FIELD_MESSAGE).is_displayed()
+        remove_bt_message_displayed = self.find_element(
+            HeroPagesLocators.LOCATOR_PAGE_13_REMOVE_BT_MESSAGE).is_displayed()
+        if remove_bt_message_displayed and text_field_message_displayed is True:
+            return True
+        else:
+            return False
+
+    def close_entry_ad(self):
+        # Wait for Modal Adv to show and close Adv window
+        time.sleep(3)
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_15_CLOSE_AD).click()
+
+    def floating_menu_click_at_each_bt(self):
+        # click at each floating menu button
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_HOME_BT).click()
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_NEWS_BT).click()
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_CONTACT_BT).click()
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_ABOUT_BT).click()
+
+
+
+
+
+
+
+
+
 
 
 

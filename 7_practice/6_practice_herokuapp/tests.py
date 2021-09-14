@@ -79,13 +79,33 @@ import time
 #     # Visible text: Option 1 or Option 2
 #     assert hero_automation_page.drop_down_menu('Option 2') == 'Option 2'
 
-def test_dynamic_content(browser):
+# def test_dynamic_content(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     # Open page
+#     hero_automation_page.open_page_by_xpath(12)
+#     assert hero_automation_page.dynamic_content() is True
+
+# def test_dynamic_controls(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     # Open page
+#     hero_automation_page.open_page_by_xpath(13)
+#     assert hero_automation_page.dynamic_controls() is True
+
+# def test_entry_ad(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     # Open page
+#     hero_automation_page.open_page_by_xpath(15)
+#     hero_automation_page.close_entry_ad()
+
+
+def test_floating_menu(browser):
     hero_automation_page = HeroPages(browser)
     hero_automation_page.go_to_site()
-    # Open page
-    hero_automation_page.open_page_by_xpath(12)
-    assert hero_automation_page.dynamic_content() is True
-
+    hero_automation_page.open_page_by_xpath(19)
+    hero_automation_page.floating_menu_click_at_each_bt()
 
 
 
