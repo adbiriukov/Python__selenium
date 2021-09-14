@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class HeroPagesLocators:
+    """Locators for HeroPage"""
     # page Add/Remove Elements
     LOCATOR_PAGE_1_ADD_BT = (By.XPATH, '//*[@id="content"]/div/button')
     LOCATOR_PAGE_1_DEL_BT = (By.XPATH, '//*[@id="elements"]/button')
