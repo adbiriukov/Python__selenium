@@ -128,6 +128,16 @@ class HeroPages(BasePage):
         self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_CONTACT_BT).click()
         self.find_element(HeroPagesLocators.LOCATOR_PAGE_19_ABOUT_BT).click()
 
+    def form_authentication(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_USERNAME_FIELD).send_keys('tomsmith')
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_PASSWORD_FIELD).send_keys('SuperSecretPassword!')
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_SUBMIT_BT).click()
+        message = self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_SUCCESS_MS)
+        return message.text
+
+
+
+
 
 
 

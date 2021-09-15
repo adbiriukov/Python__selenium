@@ -101,11 +101,19 @@ import time
 #     hero_automation_page.close_entry_ad()
 
 
-def test_floating_menu(browser):
+# def test_floating_menu(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(19)
+#     hero_automation_page.floating_menu_click_at_each_bt()
+
+
+def test_form_authentication(browser):
     hero_automation_page = HeroPages(browser)
     hero_automation_page.go_to_site()
-    hero_automation_page.open_page_by_xpath(19)
-    hero_automation_page.floating_menu_click_at_each_bt()
+    hero_automation_page.open_page_by_xpath(21)
+    assert 'You logged into a secure area!' in hero_automation_page.form_authentication()
+
 
 
 

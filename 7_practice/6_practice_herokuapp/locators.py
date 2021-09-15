@@ -50,3 +50,10 @@ class HeroPagesLocators:
     LOCATOR_PAGE_19_NEWS_BT = (By.XPATH, '//*[@id="menu"]/ul/li[2]/a')
     LOCATOR_PAGE_19_CONTACT_BT = (By.XPATH, '//*[@id="menu"]/ul/li[3]/a')
     LOCATOR_PAGE_19_ABOUT_BT = (By.XPATH, '//*[@id="menu"]/ul/li[4]/a')
+
+    # Form authentication
+    LOCATOR_PAGE_21_USERNAME_FIELD = (By.NAME, 'username')
+    LOCATOR_PAGE_21_PASSWORD_FIELD = (By.NAME, 'password')
+    LOCATOR_PAGE_21_SUBMIT_BT = (By.XPATH, '//*[@id="login"]/button/i')
+    LOCATOR_PAGE_21_SUCCESS_MS = (By.XPATH, '//*[@id="flash"]')
+
