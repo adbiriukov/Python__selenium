@@ -108,13 +108,28 @@ import time
 #     hero_automation_page.floating_menu_click_at_each_bt()
 
 
-def test_form_authentication(browser):
+# def test_form_authentication(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(21)
+#     assert 'You logged into a secure area!' in hero_automation_page.form_authentication()
+
+
+# def test_iframes_id_displayed(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(22)
+#     assert hero_automation_page.ifames() is True
+
+
+# def test_horizontal_slider(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(24)
+#     assert hero_automation_page.horizontal_slider() is True
+
+def test_hover(browser):
     hero_automation_page = HeroPages(browser)
     hero_automation_page.go_to_site()
-    hero_automation_page.open_page_by_xpath(21)
-    assert 'You logged into a secure area!' in hero_automation_page.form_authentication()
-
-
-
-
-
+    hero_automation_page.open_page_by_xpath(25)
+    assert hero_automation_page.hover() is True

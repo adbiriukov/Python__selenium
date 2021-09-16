@@ -57,3 +57,19 @@ class HeroPagesLocators:
     LOCATOR_PAGE_21_SUBMIT_BT = (By.XPATH, '//*[@id="login"]/button/i')
     LOCATOR_PAGE_21_SUCCESS_MS = (By.XPATH, '//*[@id="flash"]')
 
+    # iframes
+    LOCATOR_PAGE_22_IFRAMES_LINK = (By.XPATH, '//*[@id="content"]/div/ul/li[1]/a')
+    LOCATOR_PAGE_22_LEFT_IFRAME = (By.XPATH, '/html/frameset/frame[1]')
+    LOCATOR_PAGE_22_MIDDLE_IFRAME  = (By.XPATH, '/html/frameset/frame[2]')
+    LOCATOR_PAGE_22_RIGHT_IFRAME = (By.XPATH, '/html/frameset/frame[3]')
+    LOCATOR_PAGE_22_BOTTOM_IFRAME = (By.XPATH, '/html/body')
+
+    # Slider
+    LOCATOR_PAGE_24_SLIDER = (By.XPATH, '//*[@id="content"]/div/div/input')
+    LOCATOR_PAGE_24_SLIDER_NUMBER = (By.XPATH, '//*[@id="range"]')
+
+    # Hover
+    LOCATOR_PAGE_25_HOVER_USER_1 = (By.XPATH, '//*[@id="content"]/div/div[1]/img')
+    LOCATOR_PAGE_25_VIEW_PROFILE = (By.XPATH, '//*[@id="content"]/div/div[1]/div/a')
+    LOCATOR_PAGE_25_VIEW_PROFILE_CODE = (By.XPATH, '/html/body/h1')
+

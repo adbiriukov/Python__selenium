@@ -3,6 +3,7 @@ from locators import HeroPagesLocators
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
 import time
 
 
@@ -134,6 +135,45 @@ class HeroPages(BasePage):
         self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_SUBMIT_BT).click()
         message = self.find_element(HeroPagesLocators.LOCATOR_PAGE_21_SUCCESS_MS)
         return message.text
+
+    def ifames(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_22_IFRAMES_LINK).click()
+
+        self.driver.switch_to.frame(self.driver.find_elements_by_tag_name('frame')[0])
+        left = self.find_element(HeroPagesLocators.LOCATOR_PAGE_22_LEFT_IFRAME)
+        middle = self.find_element(HeroPagesLocators.LOCATOR_PAGE_22_MIDDLE_IFRAME)
+        right = self.find_element(HeroPagesLocators.LOCATOR_PAGE_22_RIGHT_IFRAME)
+        left = left.is_displayed()
+        middle = middle.is_displayed()
+        right = right.is_displayed()
+
+        self.driver.switch_to.default_content()
+        self.driver.switch_to.frame(self.driver.find_elements_by_tag_name('frame')[1])
+        bottom = self.find_element(HeroPagesLocators.LOCATOR_PAGE_22_BOTTOM_IFRAME)
+        bottom = bottom.is_displayed()
+        if left and middle and right and bottom is True:
+            return True
+        else:
+            return False
+
+    def horizontal_slider(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_24_SLIDER).click()
+        ActionChains(self.driver).key_down(Keys.ARROW_RIGHT).perform()
+        text = self.find_element(HeroPagesLocators.LOCATOR_PAGE_24_SLIDER_NUMBER)
+        if text.text == '3':
+            return True
+        else:
+            return False
+
+    def hover(self):
+        user = self.find_element(HeroPagesLocators.LOCATOR_PAGE_25_HOVER_USER_1)
+        view_profile = self.find_element(HeroPagesLocators.LOCATOR_PAGE_25_VIEW_PROFILE)
+        ActionChains(self.driver).move_to_element(user).perform()
+        ActionChains(self.driver).move_to_element(view_profile).click().perform()
+        return self.find_element(HeroPagesLocators.LOCATOR_PAGE_25_VIEW_PROFILE_CODE).is_displayed()
+
+
+
 
 
 
