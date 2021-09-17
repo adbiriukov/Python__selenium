@@ -73,3 +73,16 @@ class HeroPagesLocators:
     LOCATOR_PAGE_25_VIEW_PROFILE = (By.XPATH, '//*[@id="content"]/div/div[1]/div/a')
     LOCATOR_PAGE_25_VIEW_PROFILE_CODE = (By.XPATH, '/html/body/h1')
 
+    # input
+    LOCATOR_PAGE_27_INPUT_FIELD = (By.XPATH, '//*[@id="content"]/div/div/div/input')
+
+    # jquery ui menu
+    LOCATOR_PAGE_28_ENABLED_JQ = (By.XPATH, '//*[@id="ui-id-3"]/a')
+    LOCATOR_PAGE_28_DOWNLOADS_JQ = (By.XPATH, '//*[@id="ui-id-4"]/a')
+    LOCATOR_PAGE_28_PDF_JQ = (By.XPATH, '//*[@id="ui-id-5"]/a')
+
+    # JavaScript Alerts
+    LOCATOR_PAGE_29_JS_ALERT = (By.XPATH, '//*[@id="content"]/div/ul/li[1]/button')
+    LOCATOR_PAGE_29_JS_ALERT_CONFIRM = (By.XPATH, '//*[@id="content"]/div/ul/li[2]/button')
+
+

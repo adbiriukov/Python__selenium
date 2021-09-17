@@ -172,6 +172,50 @@ class HeroPages(BasePage):
         ActionChains(self.driver).move_to_element(view_profile).click().perform()
         return self.find_element(HeroPagesLocators.LOCATOR_PAGE_25_VIEW_PROFILE_CODE).is_displayed()
 
+    def infinite_scroll(self):
+        SCROLL_PAUSE_TIME = 0.5
+        # Get scroll height
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        while True:
+            # Scroll down to bottom
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            # Wait to load page
+            time.sleep(SCROLL_PAUSE_TIME)
+            # Calculate new scroll height and compare with last scroll height
+            new_height = self.driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+
+    def input_numbers(self):
+        input_field = self.find_element(HeroPagesLocators.LOCATOR_PAGE_27_INPUT_FIELD)
+        input_field.click()
+        ActionChains(self.driver).key_down(Keys.ARROW_UP).perform()
+
+    def jquery_ui_menu(self):
+        enabled = self.find_element(HeroPagesLocators.LOCATOR_PAGE_28_ENABLED_JQ)
+        downloads = self.find_element(HeroPagesLocators.LOCATOR_PAGE_28_DOWNLOADS_JQ)
+        pdf = self.find_element(HeroPagesLocators.LOCATOR_PAGE_28_PDF_JQ)
+        ActionChains(self.driver).move_to_element(enabled).perform()
+        time.sleep(1)
+        ActionChains(self.driver).move_to_element(downloads).perform()
+        time.sleep(1)
+        ActionChains(self.driver).move_to_element(pdf).perform()
+        time.sleep(1)
+
+    def js_alerts(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_29_JS_ALERT).click()
+        alert = self.driver.switch_to.alert
+        alert.accept()
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_29_JS_ALERT_CONFIRM).click()
+        alert = self.driver.switch_to.alert
+        alert.accept()
+
+
+
+
+
+
 
 
 

@@ -128,8 +128,34 @@ import time
 #     hero_automation_page.open_page_by_xpath(24)
 #     assert hero_automation_page.horizontal_slider() is True
 
-def test_hover(browser):
+# def test_hover(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(25)
+#     assert hero_automation_page.hover() is True
+
+
+# def test_infinite_scroll(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(26)
+#     hero_automation_page.infinite_scroll()
+
+# def test_inputs(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(27)
+#     hero_automation_page.input_numbers()
+
+# def test_jquery_ui_menu(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(28)
+#     hero_automation_page.jquery_ui_menu()
+
+def test_js_alerts(browser):
     hero_automation_page = HeroPages(browser)
     hero_automation_page.go_to_site()
-    hero_automation_page.open_page_by_xpath(25)
-    assert hero_automation_page.hover() is True
+    hero_automation_page.open_page_by_xpath(29)
+    hero_automation_page.js_alerts()
+
