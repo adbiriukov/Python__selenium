@@ -1,6 +1,5 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 
 class BasePage:
@@ -22,5 +21,3 @@ class BasePage:
 
     def open_page_by_xpath(self, li):
         self.driver.find_element_by_xpath("// *[ @ id = 'content'] / ul / li["+str(li)+"] / a").click()
-
-

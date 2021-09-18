@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class HeroPagesLocators:
     """Locators for HeroPage"""
     # page Add/Remove Elements
@@ -60,7 +61,7 @@ class HeroPagesLocators:
     # iframes
     LOCATOR_PAGE_22_IFRAMES_LINK = (By.XPATH, '//*[@id="content"]/div/ul/li[1]/a')
     LOCATOR_PAGE_22_LEFT_IFRAME = (By.XPATH, '/html/frameset/frame[1]')
-    LOCATOR_PAGE_22_MIDDLE_IFRAME  = (By.XPATH, '/html/frameset/frame[2]')
+    LOCATOR_PAGE_22_MIDDLE_IFRAME = (By.XPATH, '/html/frameset/frame[2]')
     LOCATOR_PAGE_22_RIGHT_IFRAME = (By.XPATH, '/html/frameset/frame[3]')
     LOCATOR_PAGE_22_BOTTOM_IFRAME = (By.XPATH, '/html/body')
 
@@ -98,4 +99,3 @@ class HeroPagesLocators:
     # Sortable data tables
     LOCATOR_PAGE_41_TABLES_EMAIL = (By.XPATH, '//*[@id="table1"]/thead/tr/th[3]/span')
     LOCATOR_PAGE_41_DUE = (By.XPATH, '//*[@id="table1"]/thead/tr/th[4]')
-
