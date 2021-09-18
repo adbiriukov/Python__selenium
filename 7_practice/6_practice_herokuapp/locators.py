@@ -85,4 +85,17 @@ class HeroPagesLocators:
     LOCATOR_PAGE_29_JS_ALERT = (By.XPATH, '//*[@id="content"]/div/ul/li[1]/button')
     LOCATOR_PAGE_29_JS_ALERT_CONFIRM = (By.XPATH, '//*[@id="content"]/div/ul/li[2]/button')
 
+    # Large & Deep DOM
+    LOCATOR_PAGE_32_LARGE_PAGE_DOM = (By.XPATH, '//*[@id="large-table"]/tbody/tr[11]/td[16]')
+
+    # Opening a new window
+    LOCATOR_PAGE_33_OPEN_NEW_WINDOW = (By.XPATH, '//*[@id="content"]/div/a')
+    LOCATOR_PAGE_33_NEW_WINDOW_TEXT = (By.XPATH, '/html/body/div/h3')
+
+    # Notification Message
+    LOCATOR_PAGE_35_NOTIFICATION_MESSAGE = (By.ID, 'flash')
+
+    # Sortable data tables
+    LOCATOR_PAGE_41_TABLES_EMAIL = (By.XPATH, '//*[@id="table1"]/thead/tr/th[3]/span')
+    LOCATOR_PAGE_41_DUE = (By.XPATH, '//*[@id="table1"]/thead/tr/th[4]')
 

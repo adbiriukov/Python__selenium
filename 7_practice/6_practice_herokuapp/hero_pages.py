@@ -211,25 +211,27 @@ class HeroPages(BasePage):
         alert = self.driver.switch_to.alert
         alert.accept()
 
+    def key_presses(self):
+        ActionChains(self.driver).key_down(Keys.CONTROL).perform()
+        time.sleep(2)
+        ActionChains(self.driver).key_down(Keys.SHIFT).perform()
+        time.sleep(2)
 
+    def large_page_dom(self):
+        a = self.find_element(HeroPagesLocators.LOCATOR_PAGE_32_LARGE_PAGE_DOM)
+        print(a.text)
 
+    def browser_new_window(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_33_OPEN_NEW_WINDOW).click()
+        # Return all the handle values of opened browser windows
+        handles = self.driver.window_handles
+        for handle in handles:
+            self.driver.switch_to.window(handle)
 
+    def notification_message(self):
+        a = self.find_element(HeroPagesLocators.LOCATOR_PAGE_35_NOTIFICATION_MESSAGE)
+        return a.text
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def sortable_data_tables(self):
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_41_TABLES_EMAIL).click()
+        self.find_element(HeroPagesLocators.LOCATOR_PAGE_41_DUE).click()

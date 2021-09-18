@@ -153,9 +153,39 @@ import time
 #     hero_automation_page.open_page_by_xpath(28)
 #     hero_automation_page.jquery_ui_menu()
 
-def test_js_alerts(browser):
+# def test_js_alerts(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(29)
+#     hero_automation_page.js_alerts()
+#
+# def test_key_presses(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(31)
+#     hero_automation_page.key_presses()
+
+# def test_large_page_dom(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(32)
+#     hero_automation_page.large_page_dom()
+
+# def test_large_page_dom(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(33)
+#     hero_automation_page.browser_new_window()
+
+# def test_notification_message(browser):
+#     hero_automation_page = HeroPages(browser)
+#     hero_automation_page.go_to_site()
+#     hero_automation_page.open_page_by_xpath(35)
+#     print(hero_automation_page.notification_message())
+
+
+def test_sortable_data_tables(browser):
     hero_automation_page = HeroPages(browser)
     hero_automation_page.go_to_site()
-    hero_automation_page.open_page_by_xpath(29)
-    hero_automation_page.js_alerts()
-
+    hero_automation_page.open_page_by_xpath(41)
+    hero_automation_page.sortable_data_tables()
