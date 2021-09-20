@@ -29,6 +29,7 @@ def api_client_post(generate_booking):
     return r
 
 
+# Update booking
 @pytest.fixture()
 def api_client_put(get_authtoken, generate_booking, firstname='Jim', lastname='Brown', totalprice=111, depositpaid=True,
                    checkin='2018-01-01', additionalneeds='Breakfast'):
