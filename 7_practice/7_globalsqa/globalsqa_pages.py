@@ -98,15 +98,3 @@ class GlobalsqaPages(BasePage):
         progress = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_1_7_PROGRESS_LABEL)
         return progress.text
 
-
-
-
-
-
-
-
-
-
-
-
-
