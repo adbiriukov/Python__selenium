@@ -34,10 +34,41 @@ import time
 #     globalsqa_automation_page.open_page_by_xpath(1, 6)
 #     globalsqa_automation_page.dialog_boxes()
 
-# Progress bar
-def test_progress_bar(browser):
+# # Progress bar
+# def test_progress_bar(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.scroll_page()
+#     globalsqa_automation_page.open_page_by_xpath(1, 7)
+#     assert 'Complete!' == globalsqa_automation_page.progress_bar()
+
+##
+# # Dropdown menu
+# def test_dropdown(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(2, 5)
+#     assert 'Russian Federation' == globalsqa_automation_page.dropdown('Russian Federation')
+
+# # Select Elements
+# def test_select_elements(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.scroll_page()
+#     globalsqa_automation_page.open_page_by_xpath(2, 7)
+#     globalsqa_automation_page.select_elements()
+
+# # Sortable
+# def test_sorting_elements(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     time.sleep(2)
+#     globalsqa_automation_page.open_page_by_xpath(3, 2)
+#     globalsqa_automation_page.sorting_elements()
+
+def test_spiner_field(browser):
     globalsqa_automation_page = GlobalsqaPages(browser)
     globalsqa_automation_page.go_to_site()
-    globalsqa_automation_page.scroll_page()
-    globalsqa_automation_page.open_page_by_xpath(1, 7)
-    assert 'Complete!' == globalsqa_automation_page.progress_bar()
+    globalsqa_automation_page.open_page_by_xpath(3, 3)
+    globalsqa_automation_page.spiner_field()
+

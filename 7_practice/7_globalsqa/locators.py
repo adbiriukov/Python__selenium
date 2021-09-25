@@ -50,8 +50,23 @@ class GlobalsqaLocators:
     LOCATOR_PAGE_1_7_START_DOWNLOAD = (By.ID, 'downloadButton')
     LOCATOR_PAGE_1_7_PROGRESS_LABEL = (By.XPATH, '//*[@id="dialog"]/div[1]')
 
+    # Dropdown menu
+    LOCATOR_PAGE_2_5_DROPDOWN = (By.XPATH, '//*[@id="post-2646"]/div[2]/div/div/div/p/select')
 
+    # Select Elements
+    LOCATOR_PAGE_2_7_IFRAME = (By.CSS_SELECTOR, '#post-2649 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
+    LOCATOR_PAGE_2_7_ITEM_1 = (By.XPATH, '//*[@id="selectable"]/li[1]')
+    LOCATOR_PAGE_2_7_ITEM_2 = (By.XPATH, '//*[@id="selectable"]/li[2]')
+    LOCATOR_PAGE_2_7_ITEM_3 = (By.XPATH, '//*[@id="selectable"]/li[3]')
 
+    # sorting elements
+    LOCATOR_PAGE_3_2_IFRAME = (By.CSS_SELECTOR, '#post-2675 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
+    LOCATOR_PAGE_3_2_ELEMENT_1 = (By.XPATH, '/html/body/div[1]/div[1]')
+    LOCATOR_PAGE_3_2_ELEMENT_2 = (By.XPATH, '/html/body/div[3]/div[2]/div[2]')
+
+    # Spiner
+    LOCATOR_PAGE_3_3_IFRAME = (By.CSS_SELECTOR, '#post-2677 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
+    LOCATOR_PAGE_3_3_SPINER_FIELD = (By.ID, 'spinner')
 
 
 

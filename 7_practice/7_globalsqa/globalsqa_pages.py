@@ -98,3 +98,35 @@ class GlobalsqaPages(BasePage):
         progress = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_1_7_PROGRESS_LABEL)
         return progress.text
 
+    def dropdown(self, visible_text):
+        dd_menu = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_2_5_DROPDOWN)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text(visible_text)
+        return ddm.first_selected_option.text
+
+    def select_elements(self):
+        self.driver.switch_to.frame(self.find_element(GlobalsqaLocators.LOCATOR_PAGE_2_7_IFRAME))
+        item_1 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_2_7_ITEM_1)
+        item_2 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_2_7_ITEM_2)
+        item_3 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_2_7_ITEM_3)
+        ActionChains(self.driver).key_down(Keys.CONTROL).click(item_1).click(item_2).click(item_3).perform()
+
+    def sorting_elements(self):
+        self.driver.switch_to.frame(self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_2_IFRAME))
+        element_1 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_2_ELEMENT_1)
+        element_2 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_2_ELEMENT_2)
+        ActionChains(self.driver).click_and_hold(element_1).drag_and_drop(element_1, element_2).perform()
+        time.sleep(3)
+
+    def spiner_field(self):
+        self.driver.switch_to.frame(self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_3_IFRAME))
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_3_SPINER_FIELD).click()
+        ActionChains(self.driver).key_down(Keys.ARROW_UP).perform()
+        # without it throw error "Message: element not interactable"
+        time.sleep(1)
+
+
+
+
+
+
