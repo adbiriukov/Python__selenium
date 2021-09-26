@@ -125,6 +125,48 @@ class GlobalsqaPages(BasePage):
         # without it throw error "Message: element not interactable"
         time.sleep(1)
 
+    def drag_and_drop(self):
+        self.driver.switch_to.frame(self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_6_IFRAME))
+        photo_1 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_6_PHOTO_1)
+        photo_2 = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_6_PHOTO_2)
+        trash = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_6_TRASH)
+        ActionChains(self.driver).drag_and_drop(photo_1, trash).perform()
+        ActionChains(self.driver).drag_and_drop(photo_2, trash).perform()
+
+    def draggable_element(self):
+        self.driver.switch_to.frame(self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_7_IFRAME))
+        draggable = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_3_7_DRAGGABLE)
+        ActionChains(self.driver).click_and_hold(draggable).move_by_offset(200, 200).pause(2).release().perform()
+
+    def sample_page(self):
+        # fill fields
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_NAME_FIELD).send_keys('SomeName')
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_EMAIL_FIELD).send_keys('some@some.com')
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_WEBSITE_FIELD).send_keys('https://www.some.com')
+        # Select value in dropdown menu
+        dd_menu = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_EXP_SELECTOR)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('1-3')
+        # Select checkboxes
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_CB_FUNCT_TEST).click()
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_CB_AUTO_TEST).click()
+        # Scroll to 500px down
+        time.sleep(1)
+        self.driver.execute_script("window.scrollBy(0, arguments[0]);", 500)
+        # Select radio button
+        radio = self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_RADIO_EDU_OTHER)
+        radio.click()
+        # Write comment
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_COMMENT_FIELD).send_keys('Some comment')
+        # Click submit button
+        self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_SUBMIT_BT).click()
+
+
+
+
+
+
+
 
 
 

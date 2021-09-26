@@ -66,9 +66,29 @@ import time
 #     globalsqa_automation_page.open_page_by_xpath(3, 2)
 #     globalsqa_automation_page.sorting_elements()
 
-def test_spiner_field(browser):
+# def test_spiner_field(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(3, 3)
+#     globalsqa_automation_page.spiner_field()
+#
+# def test_drag_and_drop(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(3, 6)
+#     globalsqa_automation_page.drag_and_drop()
+
+# def test_draggable_element(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.scroll_page()
+#     globalsqa_automation_page.open_page_by_xpath(3, 7)
+#     globalsqa_automation_page.draggable_element()
+
+def test_sample_page(browser):
     globalsqa_automation_page = GlobalsqaPages(browser)
     globalsqa_automation_page.go_to_site()
-    globalsqa_automation_page.open_page_by_xpath(3, 3)
-    globalsqa_automation_page.spiner_field()
+    globalsqa_automation_page.open_page_by_xpath(4, 2)
+    globalsqa_automation_page.sample_page()
+
 

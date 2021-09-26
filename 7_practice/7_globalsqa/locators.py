@@ -68,6 +68,24 @@ class GlobalsqaLocators:
     LOCATOR_PAGE_3_3_IFRAME = (By.CSS_SELECTOR, '#post-2677 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
     LOCATOR_PAGE_3_3_SPINER_FIELD = (By.ID, 'spinner')
 
+    # Drag and drop
+    LOCATOR_PAGE_3_6_IFRAME = (By.CSS_SELECTOR, '#post-2669 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
+    LOCATOR_PAGE_3_6_PHOTO_1 = (By.XPATH, '//*[@id="gallery"]/li[1]')
+    LOCATOR_PAGE_3_6_PHOTO_2 = (By.XPATH, '//*[@id="gallery"]/li[2]')
+    LOCATOR_PAGE_3_6_TRASH = (By.ID, 'trash')
 
+    # Draggable element
+    LOCATOR_PAGE_3_7_IFRAME = (By.CSS_SELECTOR, '#post-2665 > div.twelve.columns > div > div > div.single_tab_div.resp-tab-content.resp-tab-content-active > p > iframe')
+    LOCATOR_PAGE_3_7_DRAGGABLE = (By.ID, 'draggable')
 
+    # Sample page
+    LOCATOR_PAGE_4_2_NAME_FIELD = (By.ID, 'g2599-name')
+    LOCATOR_PAGE_4_2_EMAIL_FIELD = (By.ID, 'g2599-email')
+    LOCATOR_PAGE_4_2_WEBSITE_FIELD = (By.ID, 'g2599-website')
 
+    LOCATOR_PAGE_4_2_EXP_SELECTOR = (By.ID, 'g2599-experienceinyears')
+    LOCATOR_PAGE_4_2_CB_FUNCT_TEST = (By.XPATH, '//*[@id="contact-form-2599"]/form/div[5]/label[2]/input')
+    LOCATOR_PAGE_4_2_CB_AUTO_TEST = (By.XPATH, '//*[@id="contact-form-2599"]/form/div[5]/label[3]')
+    LOCATOR_PAGE_4_2_RADIO_EDU_OTHER = (By.XPATH, '//*[@id="contact-form-2599"]/form/div[6]/label[4]/input')
+    LOCATOR_PAGE_4_2_COMMENT_FIELD = (By.ID, 'contact-form-comment-g2599-comment')
+    LOCATOR_PAGE_4_2_SUBMIT_BT = (By.XPATH, '//*[@id="contact-form-2599"]/form/p[3]/button')
