@@ -92,3 +92,4 @@ def test_sample_page(browser):
     globalsqa_automation_page.sample_page()
 
 
+

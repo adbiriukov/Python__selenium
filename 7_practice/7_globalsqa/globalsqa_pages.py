@@ -161,7 +161,10 @@ class GlobalsqaPages(BasePage):
         # Click submit button
         self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_SUBMIT_BT).click()
 
-
+    # First enter column and then row (row + 1 than actual)
+    def ang_open_page_by_xpath(self, column, row):
+        self.driver.find_element_by_xpath(
+            "//*[@id='post-2715']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
 
 
 

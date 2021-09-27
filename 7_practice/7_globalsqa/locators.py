@@ -89,3 +89,9 @@ class GlobalsqaLocators:
     LOCATOR_PAGE_4_2_RADIO_EDU_OTHER = (By.XPATH, '//*[@id="contact-form-2599"]/form/div[6]/label[4]/input')
     LOCATOR_PAGE_4_2_COMMENT_FIELD = (By.ID, 'contact-form-comment-g2599-comment')
     LOCATOR_PAGE_4_2_SUBMIT_BT = (By.XPATH, '//*[@id="contact-form-2599"]/form/p[3]/button')
+
+    # ANG
+    # 11 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a
+    # 12 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a
+    # 21 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[2]/ul/li[2]/a
+    # 22 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[2]/ul/li[3]/a
