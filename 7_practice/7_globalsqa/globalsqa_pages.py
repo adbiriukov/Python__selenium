@@ -161,10 +161,22 @@ class GlobalsqaPages(BasePage):
         # Click submit button
         self.find_element(GlobalsqaLocators.LOCATOR_PAGE_4_2_SUBMIT_BT).click()
 
+    # To enter angularjs pages
     # First enter column and then row (row + 1 than actual)
-    def ang_open_page_by_xpath(self, column, row):
+    def angularjs_open_page_by_xpath(self, column, row):
         self.driver.find_element_by_xpath(
-            "//*[@id='post-2715']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
+            "//*[@id='post-2777']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
+
+    def multiform(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_NAME).send_keys('Something')
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_EMAIL).send_keys('email@mail.com')
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_NEXT_SECTION_BT).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_RADIO_PS4).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_NEXT_SECTION_BT_2).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_1_2_SUBMIT_BT).is_displayed()
+        time.sleep(3)
+
+
 
 
 

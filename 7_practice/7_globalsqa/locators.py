@@ -95,3 +95,14 @@ class GlobalsqaLocators:
     # 12 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a
     # 21 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[2]/ul/li[2]/a
     # 22 //*[@id="post-2777"]/div[2]/div/div/div[2]/div[2]/ul/li[3]/a
+
+    # Angularjs multiform
+    LP_4_3_1_2_NAME = (By.NAME, 'name')
+    LP_4_3_1_2_EMAIL = (By.NAME, 'email')
+    # LP_4_3_1_2_NEXT_SECTION_BT = (By.CLASS_NAME, 'btn btn-block btn-info')
+    LP_4_3_1_2_NEXT_SECTION_BT = (By.XPATH, '//*[@id="form-views"]/div[3]/div/a')
+    LP_4_3_1_2_NEXT_SECTION_BT_2 = (By.XPATH, '//*[@id="form-views"]/div[2]/div/a')
+    # LP_4_3_1_2_RADIO_PS4 = (By.CLASS_NAME, 'ng-pristine ng-valid')
+    LP_4_3_1_2_RADIO_PS4 = (By.XPATH, '//*[@id="form-views"]/div[1]/div[2]/label/input')
+    # LP_4_3_1_2_SUBMIT_BT = (By.CLASS_NAME, 'btn btn-danger')
+    LP_4_3_1_2_SUBMIT_BT = (By.XPATH, '//*[@id="form-views"]/div/button')
