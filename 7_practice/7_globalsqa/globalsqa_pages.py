@@ -177,13 +177,3 @@ class GlobalsqaPages(BasePage):
         time.sleep(3)
 
 
-
-
-
-
-
-
-
-
-
-
