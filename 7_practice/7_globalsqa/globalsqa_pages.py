@@ -175,5 +175,3 @@ class GlobalsqaPages(BasePage):
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_NEXT_SECTION_BT_2).click()
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_SUBMIT_BT).is_displayed()
         time.sleep(3)
-
-
