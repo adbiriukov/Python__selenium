@@ -98,5 +98,3 @@ def test_angularjs_multiform(browser):
     time.sleep(3)
     globalsqa_automation_page.angularjs_open_page_by_xpath(1, 2)
     globalsqa_automation_page.multiform()
-
-
