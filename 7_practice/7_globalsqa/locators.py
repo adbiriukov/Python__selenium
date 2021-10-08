@@ -106,3 +106,15 @@ class GlobalsqaLocators:
     LP_4_3_1_2_RADIO_PS4 = (By.XPATH, '//*[@id="form-views"]/div[1]/div[2]/label/input')
     # LP_4_3_1_2_SUBMIT_BT = (By.CLASS_NAME, 'btn btn-danger')
     LP_4_3_1_2_SUBMIT_BT = (By.XPATH, '//*[@id="form-views"]/div/button')
+
+    # Angularjs web table
+    LP_4_3_1_3_SEARCH_FOR_FIRSTNAME_FIELD = (By.XPATH, '/html/body/div[1]/table/thead/tr[2]/th[1]/input')
+    LP_4_3_1_3_GLOBAL_SEARCH_FIELD = (By.XPATH, '/html/body/div[1]/table/thead/tr[2]/th[2]/input')
+    LP_4_3_1_3_FIRST_ELEMENT_TABLE = (By.XPATH, '/html/body/div[1]/table/tbody/tr[1]/td[1]')
+
+    # Angularjs search filter
+    LP_4_3_1_4_SEARCH_BY_PAYEE = (By.ID, 'input1')
+    LP_4_3_1_4_SOMETHING_DISPLAYED = (By.XPATH, '/html/body/div/table/tbody/tr/td[1]')
+    LP_4_3_1_4_SEARCH_BY_ACCOUNT = (By.ID, 'input2')
+    LP_4_3_1_4_SEARCH_BY_TYPE = (By.ID, 'input3')
+    LP_4_3_1_4_SEARCH_BY_EXPENDITURE_PAYEES = (By.ID, 'input4')

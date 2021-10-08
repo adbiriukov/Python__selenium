@@ -175,3 +175,70 @@ class GlobalsqaPages(BasePage):
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_NEXT_SECTION_BT_2).click()
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_SUBMIT_BT).is_displayed()
         time.sleep(3)
+
+    def web_table(self):
+        # Enter value in first name search field
+        self.find_element(GlobalsqaLocators.LP_4_3_1_3_SEARCH_FOR_FIRSTNAME_FIELD).send_keys('Pierre')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_3_FIRST_ELEMENT_TABLE).is_displayed()
+        # Enter value in global search
+        self.find_element(GlobalsqaLocators.LP_4_3_1_3_SEARCH_FOR_FIRSTNAME_FIELD).send_keys('Dupont')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_3_FIRST_ELEMENT_TABLE).is_displayed()
+
+    def search_filter(self):
+        # First field
+        # Enter value in 'Search by Payee' field
+        search_by_payee = self.find_element(GlobalsqaLocators.LP_4_3_1_4_SEARCH_BY_PAYEE)
+        search_by_payee.send_keys('HouseRent')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_4_SOMETHING_DISPLAYED).is_displayed()
+        # Clear search filter
+        search_by_payee.clear()
+
+        # Second field
+        # Find drop down menu and select 'Cash'
+        dd_menu = self.find_element(GlobalsqaLocators.LP_4_3_1_4_SEARCH_BY_ACCOUNT)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('Cash')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_4_SOMETHING_DISPLAYED).is_displayed()
+        # Clear search filter
+        ddm.select_by_visible_text('All Accounts')
+
+        # Third field
+        # Find drop down menu and select 'INCOME'
+        dd_menu = self.find_element(GlobalsqaLocators.LP_4_3_1_4_SEARCH_BY_TYPE)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('INCOME')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_4_SOMETHING_DISPLAYED).is_displayed()
+        # Clear search filter
+        ddm.select_by_visible_text('All Types')
+
+        # Fourth field
+        # Enter value in 'Search by Expenditure Payees' field
+        search_by_payee = self.find_element(GlobalsqaLocators.LP_4_3_1_4_SEARCH_BY_EXPENDITURE_PAYEES)
+        search_by_payee.send_keys('HouseRent')
+        # search result displayed
+        self.find_element(GlobalsqaLocators.LP_4_3_1_4_SOMETHING_DISPLAYED).is_displayed()
+        # Clear search filter
+        search_by_payee.clear()
+
+    def infinite_scroll(self):
+        time.sleep(5)
+        SCROLL_PAUSE_TIME = 0.5
+        # Get scroll height
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        while True:
+            # Scroll down to bottom
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            # Wait to load page
+            time.sleep(SCROLL_PAUSE_TIME)
+            # Calculate new scroll height and compare with last scroll height
+            new_height = self.driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+
+

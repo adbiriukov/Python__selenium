@@ -90,13 +90,37 @@ import time
 #     globalsqa_automation_page.go_to_site()
 #     globalsqa_automation_page.open_page_by_xpath(4, 2)
 #     globalsqa_automation_page.sample_page()
+#
+# def test_angularjs_multiform(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(3)
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(1, 2)
+#     globalsqa_automation_page.multiform()
 
-def test_angularjs_multiform(browser):
+
+# def test_webtable(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(3)
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(1, 3)
+#     globalsqa_automation_page.web_table()
+
+# def test_search_filter(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(3)
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(1, 4)
+#     globalsqa_automation_page.search_filter()
+
+def test_scrollable(browser):
     globalsqa_automation_page = GlobalsqaPages(browser)
     globalsqa_automation_page.go_to_site()
     globalsqa_automation_page.open_page_by_xpath(4, 3)
     time.sleep(3)
-    globalsqa_automation_page.angularjs_open_page_by_xpath(1, 2)
-    globalsqa_automation_page.multiform()
-
+    globalsqa_automation_page.angularjs_open_page_by_xpath(2, 2)
+    globalsqa_automation_page.infinite_scroll()
 
