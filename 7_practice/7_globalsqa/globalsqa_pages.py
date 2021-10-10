@@ -241,4 +241,3 @@ class GlobalsqaPages(BasePage):
                 break
             last_height = new_height
 
-
