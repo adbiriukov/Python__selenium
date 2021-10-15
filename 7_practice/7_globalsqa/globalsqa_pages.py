@@ -167,6 +167,7 @@ class GlobalsqaPages(BasePage):
         self.driver.find_element_by_xpath(
             "//*[@id='post-2777']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
 
+
     def multiform(self):
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_NAME).send_keys('Something')
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_EMAIL).send_keys('email@mail.com')
@@ -240,6 +241,29 @@ class GlobalsqaPages(BasePage):
             if new_height == last_height:
                 break
             last_height = new_height
+
+    def registration_login(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REGISTER_BT).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REG_FIRST_NAME).send_keys('first_name')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REG_LAST_NAME).send_keys('last_name')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REG_USERNAME).send_keys('user_name')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REG_PASSWORD).send_keys('password')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_REGISTER_BT_SUBMIT).click()
+
+    def login_login(self):
+        time.sleep(1)
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_USERNAME_FIELD).send_keys('user_name')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_PASSWORD_FIELD).send_keys('password')
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_LOGIN_BT).click()
+
+    def delete_login(self):
+        time.sleep(1)
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_DELETE_PROFILE).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_2_3_DELETE_LOGOUT).click()
+
+
+
+
 
 
 

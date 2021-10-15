@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class GlobalsqaLocators:
     """Locators for HeroPage"""
+    LOCATOR_DELETE_ADV = (By.ID, 'ad_position_box')
+    LOCATOR_CLOSE_ADV = (By.XPATH, '//*[@id="dismiss-button"]')
     #
     LOCATOR_PAGE_BASE_SCROLL = (By.XPATH, '//*[@id="post-2715"]/div[3]/a')
     #
@@ -118,3 +120,20 @@ class GlobalsqaLocators:
     LP_4_3_1_4_SEARCH_BY_ACCOUNT = (By.ID, 'input2')
     LP_4_3_1_4_SEARCH_BY_TYPE = (By.ID, 'input3')
     LP_4_3_1_4_SEARCH_BY_EXPENDITURE_PAYEES = (By.ID, 'input4')
+
+    # Angularjs
+    # register
+    LP_4_3_2_3_REGISTER_BT = (By.XPATH, '/html/body/div[1]/div/div/div/div/form/div[3]/a')
+    LP_4_3_2_3_REG_FIRST_NAME = (By.ID, 'firstName')
+    LP_4_3_2_3_REG_LAST_NAME = (By.ID, 'Text1')
+    LP_4_3_2_3_REG_USERNAME = (By.ID, 'username')
+    LP_4_3_2_3_REG_PASSWORD = (By.ID, 'password')
+    LP_4_3_2_3_REGISTER_BT_SUBMIT = (By.XPATH, '/html/body/div[1]/div/div/div/div/form/div[5]/button')
+    # login
+    LP_4_3_2_3_USERNAME_FIELD = (By.ID, 'username')
+    LP_4_3_2_3_PASSWORD_FIELD = (By.ID, 'password')
+    LP_4_3_2_3_LOGIN_BT = (By.XPATH, '/html/body/div[1]/div/div/div/div/form/div[3]/button')
+    # delete
+    LP_4_3_2_3_DELETE_PROFILE = (By.XPATH, '/html/body/div[1]/div/div/div/ul/li/a')
+    LP_4_3_2_3_DELETE_LOGOUT = (By.XPATH, '/html/body/div[1]/div/div/div/p[3]/a')
+

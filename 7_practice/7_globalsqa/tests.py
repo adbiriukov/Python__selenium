@@ -116,11 +116,26 @@ import time
 #     globalsqa_automation_page.angularjs_open_page_by_xpath(1, 4)
 #     globalsqa_automation_page.search_filter()
 
-def test_scrollable(browser):
+# def test_scrollable(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(3)
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(2, 2)
+#     globalsqa_automation_page.infinite_scroll()
+
+def test_registrationlogin(browser):
     globalsqa_automation_page = GlobalsqaPages(browser)
     globalsqa_automation_page.go_to_site()
+    time.sleep(5)
+    globalsqa_automation_page.close_adv()
+    globalsqa_automation_page.close_adv()
     globalsqa_automation_page.open_page_by_xpath(4, 3)
-    time.sleep(3)
-    globalsqa_automation_page.angularjs_open_page_by_xpath(2, 2)
-    globalsqa_automation_page.infinite_scroll()
-
+    time.sleep(5)
+    globalsqa_automation_page.close_adv()
+    globalsqa_automation_page.angularjs_open_page_by_xpath(2, 4)
+    # register on site
+    globalsqa_automation_page.registration_login()
+    # login and delete profile
+    globalsqa_automation_page.login_login()
+    globalsqa_automation_page.delete_login()
