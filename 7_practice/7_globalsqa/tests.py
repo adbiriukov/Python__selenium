@@ -129,7 +129,6 @@ def test_registrationlogin(browser):
     globalsqa_automation_page.go_to_site()
     time.sleep(5)
     globalsqa_automation_page.close_adv()
-    globalsqa_automation_page.close_adv()
     globalsqa_automation_page.open_page_by_xpath(4, 3)
     time.sleep(5)
     globalsqa_automation_page.close_adv()

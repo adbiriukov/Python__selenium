@@ -28,8 +28,8 @@ class BasePage:
             self.driver.execute_script("""var element = arguments[0];
                     element.parentNode.removeChild(element);
                     """, self.driver.find_element_by_xpath(GlobalsqaLocators.LOCATOR_DELETE_ADV))
-            print('Adv Deleted')
-        except:
+            # print('Adv Deleted')
+        except Exception:
             pass
 
 

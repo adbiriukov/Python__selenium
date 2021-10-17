@@ -263,16 +263,3 @@ class GlobalsqaPages(BasePage):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
