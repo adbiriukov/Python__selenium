@@ -261,5 +261,36 @@ class GlobalsqaPages(BasePage):
         self.find_element(GlobalsqaLocators.LP_4_3_2_3_DELETE_PROFILE).click()
         self.find_element(GlobalsqaLocators.LP_4_3_2_3_DELETE_LOGOUT).click()
 
+    def customer_withdraw(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_CUSTOMER_LOGIN).click()
+        dd_menu = self.find_element(GlobalsqaLocators.LP_4_3_3_2_YOUR_NAME_SELECT)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('Hermoine Granger')
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_LOGIN_BT).click()
+
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_WITHDRAWL).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_AMOUNT).send_keys(1000)
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_WITHDRAW_BT).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_TRANSACTION_SUCCESSFUL).is_displayed()
+        a = self.find_element(GlobalsqaLocators.LP_4_3_3_2_BALANCE)
+        print(a.text)
+
+    def add_customer(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_BANKM_LOGIN_BT).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_ADD_CUSTOMER).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_FIRST_NAME).send_keys("Severus")
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_LAST_NAME).send_keys("Snape")
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_POST_CODE).send_keys('333221')
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_ADD_CUSTOMER_BT).click()
+        self.driver.switch_to.alert.accept()
+
+    def delete_customer(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_CUSTOMERS_TAB).click()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_2_DELETE_LAST_CUSTOMER).click()
+
+
+
+
+
 
 

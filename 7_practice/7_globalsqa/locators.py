@@ -137,3 +137,25 @@ class GlobalsqaLocators:
     LP_4_3_2_3_DELETE_PROFILE = (By.XPATH, '/html/body/div[1]/div/div/div/ul/li/a')
     LP_4_3_2_3_DELETE_LOGOUT = (By.XPATH, '/html/body/div[1]/div/div/div/p[3]/a')
 
+    # angularjs, banking
+    # withdraw
+    LP_4_3_3_2_CUSTOMER_LOGIN = (By.XPATH, '/html/body/div/div/div[2]/div/div[1]/div[1]/button')
+    LP_4_3_3_2_YOUR_NAME_SELECT = (By.ID, 'userSelect')
+    LP_4_3_3_2_LOGIN_BT = (By.XPATH, '/html/body/div/div/div[2]/div/form/button')
+
+    LP_4_3_3_2_WITHDRAWL = (By.XPATH, '/html/body/div/div/div[2]/div/div[3]/button[3]')
+    LP_4_3_3_2_AMOUNT = (By.XPATH, '/html/body/div/div/div[2]/div/div[4]/div/form/div/input')
+    LP_4_3_3_2_WITHDRAW_BT = (By.XPATH, '/html/body/div/div/div[2]/div/div[4]/div/form/button')
+    LP_4_3_3_2_TRANSACTION_SUCCESSFUL = (By.XPATH, '/html/body/div/div/div[2]/div/div[4]/div/span')
+    LP_4_3_3_2_BALANCE = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/strong[2]')
+    # Bank Manager Login
+    LP_4_3_3_2_BANKM_LOGIN_BT = (By.XPATH, '/html/body/div/div/div[2]/div/div[1]/div[2]/button')
+    LP_4_3_3_2_ADD_CUSTOMER = (By.XPATH, '/html/body/div/div/div[2]/div/div[1]/button[1]')
+    LP_4_3_3_2_FIRST_NAME = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/form/div[1]/input')
+    LP_4_3_3_2_LAST_NAME = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/form/div[2]/input')
+    LP_4_3_3_2_POST_CODE = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input')
+    LP_4_3_3_2_ADD_CUSTOMER_BT = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/form/button')
+
+    # delete customer
+    LP_4_3_3_2_CUSTOMERS_TAB = (By.XPATH, '/html/body/div/div/div[2]/div/div[1]/button[3]')
+    LP_4_3_3_2_DELETE_LAST_CUSTOMER = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[5]/td[5]/button')
