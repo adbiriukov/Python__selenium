@@ -159,3 +159,17 @@ class GlobalsqaLocators:
     # delete customer
     LP_4_3_3_2_CUSTOMERS_TAB = (By.XPATH, '/html/body/div/div/div[2]/div/div[1]/button[3]')
     LP_4_3_3_2_DELETE_LAST_CUSTOMER = (By.XPATH, '/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[5]/td[5]/button')
+
+    # angularJS calc
+    LP_4_3_3_3_A = (By.XPATH, '/html/body/div/table/tbody/tr[1]/td[2]/input')
+    LP_4_3_3_3_B = (By.XPATH, '/html/body/div/table/tbody/tr[2]/td[2]/input')
+    LP_4_3_3_3_RESULT = (By.XPATH, '/html/body/div/b')
+    LP_4_3_3_3_DD_MENU = (By.XPATH, '/html/body/div/table/tbody/tr[3]/td[2]/select')
+
+    # angularJS consum calc
+    LP_4_3_3_4_COFFEE_INPUT = (By.XPATH, '/html/body/form[1]/p/input')
+    LP_4_3_3_4_COFFEE_WARNING_MS = (By.XPATH, '/html/body/form[1]/div/p[3]')
+
+    LP_4_3_3_4_CIGARETTES_INPUT = (By.XPATH, '/html/body/form[2]/p/input')
+    LP_4_3_3_4_CIGARETTES_WARNING_MS = (By.XPATH, '/html/body/form[2]/div/p[3]')
+    LP_4_3_3_4_CIGARETTES_WARNING_IMG = (By.XPATH, '//*[@id="cigarette"]')

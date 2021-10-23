@@ -150,7 +150,31 @@ import time
 #     globalsqa_automation_page.angularjs_open_page_by_xpath(3, 2)
 #     globalsqa_automation_page.customer_withdraw()
 
-def test_banking_add_and_delete_customer(browser):
+# def test_banking_add_and_delete_customer(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     time.sleep(5)
+#     globalsqa_automation_page.close_adv()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(5)
+#     globalsqa_automation_page.close_adv()
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(3, 2)
+#     globalsqa_automation_page.add_customer()
+#     globalsqa_automation_page.delete_customer()
+
+# def test_calculator(browser):
+#     globalsqa_automation_page = GlobalsqaPages(browser)
+#     globalsqa_automation_page.go_to_site()
+#     time.sleep(5)
+#     globalsqa_automation_page.close_adv()
+#     globalsqa_automation_page.open_page_by_xpath(4, 3)
+#     time.sleep(5)
+#     globalsqa_automation_page.close_adv()
+#     globalsqa_automation_page.angularjs_open_page_by_xpath(3, 3)
+#     globalsqa_automation_page.calculator_addition()
+#     globalsqa_automation_page.calculator_multiplication()
+
+def test_consum_calculator(browser):
     globalsqa_automation_page = GlobalsqaPages(browser)
     globalsqa_automation_page.go_to_site()
     time.sleep(5)
@@ -158,40 +182,5 @@ def test_banking_add_and_delete_customer(browser):
     globalsqa_automation_page.open_page_by_xpath(4, 3)
     time.sleep(5)
     globalsqa_automation_page.close_adv()
-    globalsqa_automation_page.angularjs_open_page_by_xpath(3, 2)
-    globalsqa_automation_page.add_customer()
-    globalsqa_automation_page.delete_customer()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    globalsqa_automation_page.angularjs_open_page_by_xpath(3, 4)
+    globalsqa_automation_page.calculator_consumption()

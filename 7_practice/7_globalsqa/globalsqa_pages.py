@@ -167,7 +167,6 @@ class GlobalsqaPages(BasePage):
         self.driver.find_element_by_xpath(
             "//*[@id='post-2777']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
 
-
     def multiform(self):
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_NAME).send_keys('Something')
         self.find_element(GlobalsqaLocators.LP_4_3_1_2_EMAIL).send_keys('email@mail.com')
@@ -288,15 +287,28 @@ class GlobalsqaPages(BasePage):
         self.find_element(GlobalsqaLocators.LP_4_3_3_2_CUSTOMERS_TAB).click()
         self.find_element(GlobalsqaLocators.LP_4_3_3_2_DELETE_LAST_CUSTOMER).click()
 
+    def calculator_addition(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_3_3_A).clear()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_3_A).send_keys('100')
+        self.find_element(GlobalsqaLocators.LP_4_3_3_3_B).clear()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_3_B).send_keys('301')
+        r = self.find_element(GlobalsqaLocators.LP_4_3_3_3_RESULT)
+        assert r.text == '100 + 301 = 401'
+        time.sleep(5)
 
+    def calculator_multiplication(self):
+        dd_menu = self.find_element(GlobalsqaLocators.LP_4_3_3_3_DD_MENU)
+        ddm = Select(dd_menu)
+        ddm.select_by_visible_text('*')
+        r = self.find_element(GlobalsqaLocators.LP_4_3_3_3_RESULT)
+        assert r.text == '100 * 301 = 30100'
 
+    def calculator_consumption(self):
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_COFFEE_INPUT).clear()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_COFFEE_INPUT).send_keys('10')
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_COFFEE_WARNING_MS).is_displayed()
 
-
-
-
-
-
-
-
-
-
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_CIGARETTES_INPUT).clear()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_CIGARETTES_INPUT).send_keys('10')
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_CIGARETTES_WARNING_MS).is_displayed()
+        self.find_element(GlobalsqaLocators.LP_4_3_3_4_CIGARETTES_WARNING_IMG).is_displayed()

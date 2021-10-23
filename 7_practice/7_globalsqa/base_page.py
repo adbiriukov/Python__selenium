@@ -32,9 +32,7 @@ class BasePage:
         except Exception:
             pass
 
-
     # First enter column and then row (row + 1 than actual)
     def open_page_by_xpath(self, column, row):
         self.driver.find_element_by_xpath(
             "//*[@id='post-2715']/div[2]/div/div/div[2]/div["+str(column)+"]/ul/li["+str(row)+"]/a").click()
-
