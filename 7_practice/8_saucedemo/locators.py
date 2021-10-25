@@ -17,3 +17,6 @@ class SaucedemoLocators:
     L_ONESIE_ADD = (By.ID, 'add-to-cart-sauce-labs-onesie')
     L_RED_TSHIRT = (By.ID, 'add-to-cart-test.allthethings()-t-shirt-(red)')
 
+    L_DROPDOWN_MENU = (By.XPATH, '//*[@id="header_container"]/div[2]/div[2]/span/select')
+
+    L_LIST_OF_PRODUCTS = (By.XPATH, '//*[@id="inventory_container"]/div/div[1]')
