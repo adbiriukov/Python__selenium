@@ -15,7 +15,16 @@ class SaucedemoLocators:
     L_TSHIRT_ADD = (By.ID, 'add-to-cart-sauce-labs-bolt-t-shirt')
     L_JACKET_ADD = (By.ID, 'add-to-cart-sauce-labs-fleece-jacket')
     L_ONESIE_ADD = (By.ID, 'add-to-cart-sauce-labs-onesie')
-    L_RED_TSHIRT = (By.ID, 'add-to-cart-test.allthethings()-t-shirt-(red)')
+    L_RED_TSHIRT_ADD = (By.ID, 'add-to-cart-test.allthethings()-t-shirt-(red)')
+
+    L_BACKPACK_REMOVE = (By.ID, 'remove-sauce-labs-backpack')
+    L_BIKE_LIGHT_REMOVE = (By.ID, 'remove-sauce-labs-bike-light')
+    L_TSHIRT_REMOVE = (By.ID, 'remove-sauce-labs-bolt-t-shirt')
+    L_JACKET_REMOVE = (By.ID, 'remove-sauce-labs-fleece-jacket')
+    L_ONESIE_REMOVE = (By.ID, 'remove-sauce-labs-onesie')
+    L_RED_TSHIRT_REMOVE = (By.ID, 'remove-test.allthethings()-t-shirt-(red)')
+
+
 
     L_DROPDOWN_MENU = (By.XPATH, '//*[@id="header_container"]/div[2]/div[2]/span/select')
 
