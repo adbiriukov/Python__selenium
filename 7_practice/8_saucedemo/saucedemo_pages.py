@@ -43,3 +43,15 @@ class SaucedemoPages(BasePage):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
