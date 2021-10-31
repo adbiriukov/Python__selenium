@@ -33,15 +33,3 @@ class SaucedemoPages(BasePage):
 
 # //*[@id="remove-sauce-labs-backpack"]
 # //*[@id="add-to-cart-sauce-labs-backpack"]
-
-
-
-
-
-
-
-
-
-
-
-
