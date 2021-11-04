@@ -4,6 +4,7 @@ from locators import SaucedemoLocators
 from selenium.webdriver.support.ui import Select
 import time
 
+
 class SaucedemoPages(BasePage):
     def login(self):
         self.find_element(SaucedemoLocators.L_USERNAME_FIELD).send_keys('standard_user')
@@ -82,12 +83,3 @@ class SaucedemoPages(BasePage):
             return True
         else:
             return False
-
-
-
-
-
-
-
-# //*[@id="remove-sauce-labs-backpack"]
-# //*[@id="add-to-cart-sauce-labs-backpack"]

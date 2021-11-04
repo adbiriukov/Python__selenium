@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class SaucedemoLocators:
     """Locators for Saucedemo"""
     # main page

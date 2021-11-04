@@ -2,8 +2,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
-
 class BasePage:
     """Base page methods for globalsqa"""
     def __init__(self, driver):
