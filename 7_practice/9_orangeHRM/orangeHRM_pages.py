@@ -27,5 +27,3 @@ class OrangeHRMPages(BasePage):
         self.find_element(OrangeHRMLocators.L_UPPER_LOGO).is_displayed()
 
 
-
-
