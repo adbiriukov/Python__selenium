@@ -10,6 +10,7 @@ class OrangeHRMPages(BasePage):
         self.find_element(OrangeHRMLocators.L_LOGIN_FIELD).send_keys('Admin')
         self.find_element(OrangeHRMLocators.L_PASSWORD_FIELD).send_keys('admin123')
         self.find_element(OrangeHRMLocators.L_LOGIN_BT).click()
+        time.sleep(30)
 
     def forgot_password(self):
         self.find_element(OrangeHRMLocators.L_FORGOT_PASS_LINK).click()
