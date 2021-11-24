@@ -21,13 +21,13 @@ class OrangeHRMLocators:
     L_UPPER_LOGO = (By.XPATH, '//*[@id="divLogo"]/img')
 
     # header
-    L_HEADER_WELCOME_MS = (By.ID, 'welcome')
+    L_HEADER_WELCOME_MS = (By.CSS_SELECTOR, '#welcome')
     L_HEADER_WELCOME_ABOUT = (By.XPATH, '//*[@id="aboutDisplayLink"]')
     L_HEADER_WELCOME_SUPPORT = (By.XPATH, '//*[@id="welcome-menu"]/ul/li[2]/a')
     L_HEADER_WELCOME_LOGOUT = (By.XPATH, '//*[@id="welcome-menu"]/ul/li[3]/a')
 
-
-
+    L_HEADER_NOTIFICATION_BELL = (By.ID, 'notification')
+    L_HEADER_NOTIFICATION_BELL_MS = (By.ID, 'notificationsMessages')
 
 
 
