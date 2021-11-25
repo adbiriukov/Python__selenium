@@ -3,21 +3,20 @@ import pytest
 from random import choice
 
 
-# to post auth and get status code
 @pytest.fixture()
-def api_auth_post(api_request, json_request, headers):
+def api_get_pet(api_request, headers):
     # r = requests.get("https://"+str(login_pass)+"@restful-booker.herokuapp.com/"+str(api_request[0])+"")
-    r = requests.post("https://petstore.swagger.io/"+str(api_request[0])+"", json_request, headers)
+    r = requests.get("https://petstore.swagger.io/"+str(api_request[0])+"", headers)
     r = r.status_code
     return r
 
 
-# # # # To get value
-# @pytest.fixture()
-# def api_client_get_value(api_request, json_request):
-#     r = requests.get("https://restful-booker.herokuapp.com/"+str(api_request[0])+"", json_request)
-#     r = r.json()
-#     return r
+
+@pytest.fixture()
+def api_post_order(api_request, data, header):
+    r = requests.post("https://petstore.swagger.io/"+str(api_request[0])+"", json=data, headers=header)
+    r = r.json()
+    return r
 #
 #
 # # # To post

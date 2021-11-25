@@ -1,30 +1,30 @@
 import pytest
 
 
-# auth and get status
-@pytest.mark.parametrize('api_request', [['v2/pet', '200']])
-@pytest.mark.parametrize('json_request', [{'method': 'POST', "id": 0,
-                                           "category": {
-                                               "id": 0,
-                                               "name": "string"
-                                           },
-                                           "name": "doggie",
-                                           "photoUrls": [
-                                               "string"
-                                           ],
-                                           "tags": [
-                                               {
-                                                   "id": 0,
-                                                   "name": "string"
-                                               }
-                                           ],
-                                           "status": "available"}])
-@pytest.mark.parametrize('headers', [{'Content-type': 'application/json'}])
-def test_api_auth_post(api_auth_post, api_request, json_request, headers):
-    r = api_auth_post
+# @pytest.mark.parametrize('api_request', [['v2/store/inventory', '200']])
+# @pytest.mark.parametrize('headers', [{'accept': 'application/json'}])
+# def test_get_pet(api_get_pet, api_request, headers):
+#     r = api_get_pet
+#     print('==========')
+#     print(r)
+#     assert r == int(api_request[1])
+
+
+@pytest.mark.parametrize('api_request', [['v2/store/order']])
+@pytest.mark.parametrize('header', [{'Content-Type': 'application/json', 'accept': 'application/json'}])
+@pytest.mark.parametrize('data', [{
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2021-11-25T14:54:06.445Z",
+  "status": "placed",
+  "complete": True
+}])
+def test_api_auth_post(api_post_order, api_request, data, header):
+    r = api_post_order
     print('==========')
-    print(r)
-    assert r == int(api_request[1])
+    print(r['complete'])
+    assert r['complete'] is True
 
 # # auth by token
 # @pytest.mark.parametrize('api_request', [['auth', '200']])
