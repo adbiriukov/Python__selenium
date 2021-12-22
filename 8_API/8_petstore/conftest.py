@@ -13,8 +13,8 @@ def api_get_pet(api_request, headers):
 
 
 @pytest.fixture()
-def api_post_order(api_request, data, header):
-    r = requests.post("https://petstore.swagger.io/"+str(api_request[0])+"", json=data, headers=header)
+def api_post_order(api_request, data, headers):
+    r = requests.post("https://petstore.swagger.io/"+str(api_request[0])+"", json=data, headers=headers)
     r = r.json()
     return r
 #

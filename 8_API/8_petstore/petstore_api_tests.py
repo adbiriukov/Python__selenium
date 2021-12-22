@@ -1,17 +1,17 @@
 import pytest
 
 
-# @pytest.mark.parametrize('api_request', [['v2/store/inventory', '200']])
-# @pytest.mark.parametrize('headers', [{'accept': 'application/json'}])
-# def test_get_pet(api_get_pet, api_request, headers):
-#     r = api_get_pet
-#     print('==========')
-#     print(r)
-#     assert r == int(api_request[1])
+@pytest.mark.parametrize('api_request', [['v2/store/inventory', '200']])
+@pytest.mark.parametrize('headers', [{'accept': 'application/json'}])
+def test_get_pet(api_get_pet, api_request, headers):
+    r = api_get_pet
+    print()
+    print(r)
+    assert r == int(api_request[1])
 
 
 @pytest.mark.parametrize('api_request', [['v2/store/order']])
-@pytest.mark.parametrize('header', [{'Content-Type': 'application/json', 'accept': 'application/json'}])
+@pytest.mark.parametrize('headers', [{'Content-Type': 'application/json', 'accept': 'application/json'}])
 @pytest.mark.parametrize('data', [{
   "id": 0,
   "petId": 0,
@@ -20,9 +20,9 @@ import pytest
   "status": "placed",
   "complete": True
 }])
-def test_api_auth_post(api_post_order, api_request, data, header):
+def test_api_auth_post(api_post_order, api_request, data, headers):
     r = api_post_order
-    print('==========')
+    print()
     print(r['complete'])
     assert r['complete'] is True
 
