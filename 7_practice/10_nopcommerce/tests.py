@@ -43,6 +43,7 @@ def test_login(browser):
     np = NopcommercePages(browser)
     np.go_to_site()
     np.login()
+    time.sleep(5)
 
 
 
