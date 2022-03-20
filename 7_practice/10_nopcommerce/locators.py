@@ -9,6 +9,17 @@ class NopcommerceLocators:
     L_HEADER_WISHLIST_BT = (By.XPATH, '/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[3]/a/span[1]')
     L_HEADER_SHOPPING_CART_BT = (By.XPATH, '//*[@id="topcartlink"]/a/span[1]')
     L_HEADER_LOGOUT_BT = (By.XPATH, '/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a')
+    L_HEADER_LOGO_LINK = (By.XPATH, '/html/body/div[6]/div[1]/div[2]/div[1]/a/img')
+
+    # Tabs
+    L_TAB_COMPUTERS_BT = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[1]/a')
+    L_TAB_ELECTRONICS_BT = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[2]/a')
+    L_TAB_APPAREL_BT = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[3]/a')
+    L_TAB_DIGITAL_DOWNLOADS_BT = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[4]/a')
+    L_TAB_BOOKS_BT = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[5]/a')
+    L_TAB_JEWELRY = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[6]/a')
+    L_TAB_GIFT_CARDS = (By.XPATH, '/html/body/div[6]/div[2]/ul[1]/li[7]/a')
+    L_TAB_NAME_OF_CHOSEN_CATEGORY = (By.XPATH, '/html/body/div[6]/div[3]/div/div[3]/div/div[1]/h1')
 
     # Register page
     L_REGISTER_GENDER_MALE_RADIO = (By.ID, 'gender-male')

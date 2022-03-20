@@ -5,16 +5,82 @@ from selenium.webdriver.support.ui import Select
 import time
 
 
-class NopcommercePages(BasePage):
+class NopcommerceHeaderAndTabs(BasePage):
     def login(self):
         # open login page
         self.find_element(NopcommerceLocators.L_HEADER_LOGIN_BT).click()
         # enter email and password
-        self.find_element(NopcommerceLocators.L_LOGIN_EMAIL_FIELD).send_keys('kalter5@yandex.ru')
-        self.find_element(NopcommerceLocators.L_LOGIN_PASSWORD_FIELD).send_keys('kalter5')
+        self.find_element(NopcommerceLocators.L_LOGIN_EMAIL_FIELD).send_keys('some_mail@mail.com')
+        self.find_element(NopcommerceLocators.L_LOGIN_PASSWORD_FIELD).send_keys('qwerty')
         # click login button and check that logout button displayed
         self.find_element(NopcommerceLocators.L_LOGIN_LOGIN_BT).click()
         self.find_element(NopcommerceLocators.L_HEADER_LOGOUT_BT).is_displayed()
+
+    def logout_is_displayed(self):
+        # logout is displayed in the header after login
+        self.find_element(NopcommerceLocators.L_HEADER_LOGOUT_BT).is_displayed()
+
+    def go_to_default_page_by_logo(self):
+        self.find_element(NopcommerceLocators.L_HEADER_LOGO_LINK).click()
+
+    def open_register_page(self):
+        # open register page
+        self.find_element(NopcommerceLocators.L_HEADER_REGISTER_BT).click()
+
+    def open_login_page(self):
+        # open login page
+        self.find_element(NopcommerceLocators.L_HEADER_LOGIN_BT).click()
+
+    def open_wishlist_page(self):
+        # open wishlist page
+        self.find_element(NopcommerceLocators.L_HEADER_WISHLIST_BT).click()
+
+    def open_shopping_cart_page(self):
+        # open shopping cart page
+        self.find_element(NopcommerceLocators.L_HEADER_SHOPPING_CART_BT).click()
+
+    def open_computers_tab(self):
+        # open computers tab
+        self.find_element(NopcommerceLocators.L_TAB_COMPUTERS_BT).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_electronics_tab(self):
+        # open electronics tab
+        self.find_element(NopcommerceLocators.L_TAB_ELECTRONICS_BT).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_apparel_tab(self):
+        # open apparel tab
+        self.find_element(NopcommerceLocators.L_TAB_APPAREL_BT).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_digital_downloads_tab(self):
+        # open Digital downloads tab
+        self.find_element(NopcommerceLocators.L_TAB_DIGITAL_DOWNLOADS_BT).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_books_tab(self):
+        # open Books tab
+        self.find_element(NopcommerceLocators.L_TAB_BOOKS_BT).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_jewelry_tab(self):
+        # open Jewelry tab
+        self.find_element(NopcommerceLocators.L_TAB_JEWELRY).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
+    def open_gift_cards_tab(self):
+        # open Gift Cards tab
+        self.find_element(NopcommerceLocators.L_TAB_GIFT_CARDS).click()
+        # return tab name
+        return self.find_element(NopcommerceLocators.L_TAB_NAME_OF_CHOSEN_CATEGORY).text
+
 
 
 class NopcommerceRegisterPage(BasePage):
@@ -90,6 +156,9 @@ class NopcommerceRegisterPage(BasePage):
     def email_exist_error_appeared(self):
         # Message "The specified email already exists" appears
         self.find_element(NopcommerceLocators.L_REGISTER_EMAIL_EXIST_MS).is_displayed()
+
+
+
 
 
 
