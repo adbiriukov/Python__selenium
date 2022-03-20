@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class NopcommerceLocators:
-    """Locators for OrangeHRM"""
+    """Locators for nopcommerce"""
     # header
     L_HEADER_REGISTER_BT = (By.XPATH, '/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a')
     L_HEADER_LOGIN_BT = (By.XPATH, '/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a')
