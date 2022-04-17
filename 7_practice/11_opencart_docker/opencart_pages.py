@@ -37,13 +37,30 @@ class OpencartHeaderAndTabs(BasePage):
         self.find_element(OpencartLocators.L_REGISTER_CONF_POLICY).click()
         self.find_element(OpencartLocators.L_REGISTER_CONTINUE_BT).click()
 
-        time.sleep(5)
+    def open_register_page(self):
+        # open register page
+        self.find_element(OpencartLocators.L_HEADER_MY_ACCOUNT_DROPDOWN).click()
+        self.find_element(OpencartLocators.L_HEADER_REGISTER_BT).click()
+
+    def register_page_all_warnings_displayed(self):
+        self.find_element(OpencartLocators.L_REGISTER_CONTINUE_BT).click()
+        assert self.find_element(OpencartLocators.L_REGISTER_POLICY_WARNING).text == \
+               'Warning: You must agree to the Privacy Policy!'
+        assert self.find_element(OpencartLocators.L_REGISTER_FNAME_WARNING).text == \
+               'First Name must be between 1 and 32 characters!'
+        assert self.find_element(OpencartLocators.L_REGISTER_LNAME_WARNING).text == \
+               'Last Name must be between 1 and 32 characters!'
+        assert self.find_element(OpencartLocators.L_REGISTER_EMAIL_WARNING).text == \
+               'E-Mail Address does not appear to be valid!'
+        assert self.find_element(OpencartLocators.L_REGISTER_TELEPHONE_WARNING).text == \
+               'Telephone must be between 3 and 32 characters!'
+        assert self.find_element(OpencartLocators.L_REGISTER_PASSWORD_WARNING).text == \
+               'Password must be between 4 and 20 characters!'
 
 
+    def click_shopping_cart_link(self):
+        self.find_element(OpencartLocators.L_HEADER_SHOPPING_CART_LINK).click()
 
-        # # enter email and password
-        # self.find_element(NopcommerceLocators.L_LOGIN_EMAIL_FIELD).send_keys('some_mail@mail.com')
-        # self.find_element(NopcommerceLocators.L_LOGIN_PASSWORD_FIELD).send_keys('qwerty')
-        # # click login button and check that logout button displayed
-        # self.find_element(NopcommerceLocators.L_LOGIN_LOGIN_BT).click()
-        # self.find_element(NopcommerceLocators.L_HEADER_LOGOUT_BT).is_displayed()
+    def shopping_cart_is_empty_message(self):
+        assert self.find_element(OpencartLocators.L_SHOPPING_CART_CART_IS_EMPTY).text == 'Your shopping cart is empty!'
+
