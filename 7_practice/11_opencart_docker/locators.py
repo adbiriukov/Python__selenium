@@ -33,5 +33,21 @@ class OpencartLocators:
     L_SHOPPING_CART_CART_IS_EMPTY = (By.CSS_SELECTOR, '#content > p')
     L_SHOPPING_CART_CART_CONTINUE_BT = (By.CSS_SELECTOR, '#content > div > div > a')
 
+    # Tabs
+    L_TAB_DESKTOPS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(1) > a')
+    L_TAB_LAPTOPS_AND_NOTEBOOKS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(2) > a')
+    L_TAB_COMPONENTS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(3) > a')
+    L_TAB_TABLETS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(4) > a')
+    L_TAB_SOFTWARE = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(5) > a')
+    L_TAB_PHONE_AND_PDAS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(6) > a')
+    L_TAB_CAMERAS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(7) > a')
+    L_TAB_MP3_PLAYERS = (By.CSS_SELECTOR, '#menu > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li:nth-child(8) > a')
 
+    # Product compare
+    PAGE_MESSAGE_COMPARE = (By.CSS_SELECTOR, '#product-category > div.alert.alert-success.alert-dismissible > a:nth-child(3)')
+    PRODUCT_COMPARE1 = (By.CSS_SELECTOR, '#content > div:nth-child(3) > div:nth-child(1) > div > div:nth-child(2) > div.button-group > button:nth-child(3) > i')
+    PRODUCT_COMPARE2 = (By.CSS_SELECTOR, '#content > div:nth-child(3) > div:nth-child(2) > div > div:nth-child(2) > div.button-group > button:nth-child(3) > i')
+
+    PRODUCT_COMPARISON_PAGE_PRODUCT1 = (By.CSS_SELECTOR, '#content > table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)')
+    PRODUCT_COMPARISON_PAGE_PRODUCT2 = (By.CSS_SELECTOR, '#content > table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3)')
 

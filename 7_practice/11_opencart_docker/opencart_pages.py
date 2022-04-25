@@ -64,3 +64,17 @@ class OpencartHeaderAndTabs(BasePage):
     def shopping_cart_is_empty_message(self):
         assert self.find_element(OpencartLocators.L_SHOPPING_CART_CART_IS_EMPTY).text == 'Your shopping cart is empty!'
 
+    def open_cameras_tab(self):
+        self.find_element(OpencartLocators.L_TAB_CAMERAS).click()
+
+    def compare_two_first_products(self):
+        self.find_element(OpencartLocators.PRODUCT_COMPARE1).click()
+        self.find_element(OpencartLocators.PRODUCT_COMPARE2).click()
+    # Open compare page via message
+    def open_compare_page_ms(self):
+        self.find_element(OpencartLocators.PAGE_MESSAGE_COMPARE).click()
+
+    def two(self):
+        number_of_bt = self.find_elements(OpencartLocators.ADD_TO_CART_BT)
+        return len(number_of_bt)
+

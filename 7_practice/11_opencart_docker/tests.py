@@ -1,12 +1,12 @@
 from opencart_pages import OpencartHeaderAndTabs
 import time
 
-# Register: After clicking register with all fields empty all error messages are displayed
-def test_register_all_error_messages_displayed(browser):
-    oc = OpencartHeaderAndTabs(browser)
-    oc.go_to_site()
-    oc.open_register_page()
-    oc.register_page_all_warnings_displayed()
+# # Register: After clicking register with all fields empty all error messages are displayed
+# def test_register_all_error_messages_displayed(browser):
+#     oc = OpencartHeaderAndTabs(browser)
+#     oc.go_to_site()
+#     oc.open_register_page()
+#     oc.register_page_all_warnings_displayed()
 
 # # Register and then delete the user through sql
 # def test_register(browser):
@@ -28,3 +28,12 @@ def test_register_all_error_messages_displayed(browser):
 #     oc.go_to_site()
 #     oc.click_shopping_cart_link()
 #     oc.shopping_cart_is_empty_message()
+
+def test_compare_two_products(browser):
+    oc = OpencartHeaderAndTabs(browser)
+    oc.go_to_site()
+    oc.open_cameras_tab()
+    oc.compare_two_first_products()
+    time.sleep(3)
+    oc.open_compare_page_ms()
+    assert oc.find_number_of_products_present() == 2
